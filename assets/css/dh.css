@@ -784,3 +784,33 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 @media (max-width: 600px) {
   .expect-panel .facts { text-align: left; font-size: 1rem; gap: 0.8rem; font-family: "Montserrat", var(--font); }
 }
+
+/* ===================================================================== Round 24 */
+/* Logo: tighter discoveryhealth, home care line left-aligned under the d */
+.brand-v4 { align-items: flex-start; text-align: left; }
+.brand-v4 .brand-word2 { letter-spacing: -0.06em; font-size: 1.78rem; }
+.brand-hc2 { justify-content: flex-start; margin-top: 0.14rem; padding-left: 0.1rem; gap: 0.25rem; font-size: 0.72rem; letter-spacing: 0.1em; }
+.brand-hc2 .brand-pulse-l { display: none; }
+.brand-hc2 .brand-pulse-r { width: 30px; }
+.footer-brand .logo-card .brand-word2 { font-size: 1.55rem; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 1.5rem; } .brand-hc2 { font-size: 0.62rem; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 1.32rem; } }
+/* Service cards: the whole card is clickable, with a visible hover/press state */
+.svc-card { position: relative; cursor: pointer; }
+.svc-card h3 a.svc-title { color: inherit; text-decoration: none; transition: color 0.2s; }
+.svc-card h3 a.svc-title::after { content: ""; position: absolute; inset: 0; }
+.svc-card:hover h3 a.svc-title, .svc-card:focus-within h3 a.svc-title { color: var(--coral-dark); text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 2px; }
+.svc-card:hover .link-more { color: var(--coral-dark); }
+@media (max-width: 600px) {
+  .text-center { text-align: center; }
+  .svc-card .link-more { display: none; }
+  .svc-card h3 a.svc-title { color: var(--teal); text-decoration: underline; text-decoration-color: var(--teal-tint); text-underline-offset: 0.3em; text-decoration-thickness: 2px; }
+  .svc-card:active h3 a.svc-title { color: var(--coral-dark); text-decoration-color: var(--coral-dark); }
+  .svc-card:active .svc-photo img { transform: scale(1.03); }
+  /* Commonwise rhythm: 62% photo, title ~50px below, ~70px between services */
+  .svc-grid { gap: 4.2rem; }
+  .svc-card .svc-photo, .svc-card .svc-photo:has(img[src*="care-dressing-help-1"]) { width: 64%; aspect-ratio: 1 / 1; }
+  .svc-card .svc-body { padding-top: 2.4rem; gap: 0.7rem; }
+  .svc-card h3 { font-size: 0.86rem; letter-spacing: 0.18em; }
+  .svc-card p { font-size: 0.92rem; line-height: 1.65; max-width: 28ch; margin: 0 auto; }
+}

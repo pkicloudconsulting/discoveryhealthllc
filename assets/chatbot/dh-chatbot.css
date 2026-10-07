@@ -95,3 +95,20 @@
   .dhc.is-open .dhc-toggle { width: 40px; padding: 0; }
   .dhc.is-open .dhc-ico { width: 30px; height: 30px; }
 }
+
+/* Round 24: circular launcher, icon over a small label */
+.dhc-toggle { width: 66px; height: 66px; padding: 0; border-radius: 50%; flex-direction: column; justify-content: center; gap: 2px; background: var(--coral, #ee707b); border: 3px solid #fff; box-shadow: 0 12px 28px -10px rgba(217, 84, 95, 0.6); }
+.dhc-ico { width: auto; height: auto; background: transparent; box-shadow: none; color: #fff; }
+.dhc-ico svg { width: 24px; height: 24px; }
+.dhc-ico svg circle { fill: var(--coral, #ee707b); }
+.dhc-toggle-label { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; line-height: 1; display: inline; }
+.dhc-close-x { display: none; font-size: 1.7rem; line-height: 1; font-weight: 400; }
+.dhc.is-open .dhc-toggle { width: 52px; height: 52px; background: var(--teal-deep, #163f47); }
+.dhc.is-open .dhc-ico, .dhc.is-open .dhc-toggle-label { display: none; }
+.dhc.is-open .dhc-close-x { display: block; }
+@media (max-width: 600px) {
+  .dhc-toggle { width: 54px; height: 54px; border-width: 2px; }
+  .dhc-ico svg { width: 20px; height: 20px; }
+  .dhc-toggle-label { font-size: 0.52rem; }
+  .dhc.is-open .dhc-toggle { width: 44px; height: 44px; }
+}
