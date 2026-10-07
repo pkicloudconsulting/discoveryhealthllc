@@ -3,8 +3,8 @@
 .dhc-toggle { display: inline-flex; align-items: center; gap: 0.6rem; border: 0; cursor: pointer; background: var(--teal, #2f7a86); color: #fff; border-radius: 999px; height: 58px; padding: 0 1.1rem 0 1rem; box-shadow: 0 14px 34px -12px rgba(22, 63, 71, 0.6); transition: background 0.25s, transform 0.2s, box-shadow 0.2s; font: inherit; font-weight: 600; font-size: 0.98rem; }
 .dhc-toggle:hover { background: var(--teal-dark, #1f5d68); transform: translateY(-2px); }
 .dhc-toggle svg { width: 26px; height: 26px; flex: none; }
-.dhc-toggle-label { display: none; white-space: nowrap; }
-.dhc.has-label:not(.is-open) .dhc-toggle-label { display: inline; animation: dhcIn 0.4s ease both; }
+.dhc-toggle-label { white-space: nowrap; }
+.dhc.is-open .dhc-toggle-label { display: none; }
 .dhc.is-open .dhc-toggle { background: var(--teal-deep, #163f47); }
 .dhc-panel[hidden] { display: none; }
 .dhc-panel { width: min(380px, calc(100vw - 36px)); height: min(600px, calc(100vh - 110px)); background: #fff; border-radius: 20px; box-shadow: 0 24px 60px -18px rgba(22, 63, 71, 0.45); display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line, #d8e4e6); animation: dhcIn 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
@@ -46,3 +46,13 @@
   .dhc-panel { width: calc(100vw - 24px); height: min(560px, calc(100vh - 96px)); }
 }
 @media (prefers-reduced-motion: reduce) { .dhc-panel, .dhc-toggle-label, .dhc-typing span { animation: none; } }
+
+/* Round 4: coral launcher with a white ring so it stands out on teal sections, compact on phones */
+.dhc-toggle { background: var(--coral, #ee707b); border: 3px solid #fff; box-shadow: 0 10px 26px -8px rgba(217, 84, 95, 0.55); }
+.dhc-toggle:hover { background: var(--coral-dark, #d9545f); }
+.dhc.is-open .dhc-toggle { background: var(--teal-deep, #163f47); padding: 0; width: 52px; justify-content: center; }
+@media (max-width: 600px) {
+  .dhc-toggle { height: 46px; padding: 0 0.95rem 0 0.8rem; font-size: 0.88rem; gap: 0.45rem; }
+  .dhc-toggle svg { width: 20px; height: 20px; }
+  .dhc.is-open .dhc-toggle { width: 46px; }
+}
