@@ -211,7 +211,7 @@
       if (saved.open) { root.classList.add("is-open"); toggle.setAttribute("aria-expanded", "true"); panel.hidden = false; renderChips(); }
     }
     /* nudge label appears after a few seconds on first visit, hides once used */
-    root.classList.add("has-label");
+    root.classList.add("has-label"); setTimeout(function () { root.classList.remove("has-label"); }, 2200);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build); else build();
 })();

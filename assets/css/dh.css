@@ -861,3 +861,18 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 .brand-v4 .brand-word2 { font-size: 1.7rem; }
 @media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 1.28rem; } .brand img.brand-mark { height: 40px; } }
 @media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 1.1rem; } .brand img.brand-mark { height: 36px; } }
+
+/* ===================================================================== Round 28 */
+/* Service cards: no underline; the box is hidden until the card is hovered or pressed */
+.svc-card { border-color: transparent; background: transparent; box-shadow: none; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s, background 0.25s; }
+.svc-card:hover, .svc-card:focus-within { border-color: var(--line); background: #fff; box-shadow: var(--shadow); transform: translateY(-4px); }
+.svc-card h3 a.svc-title, .svc-card:hover h3 a.svc-title, .svc-card:focus-within h3 a.svc-title { text-decoration: none; }
+.svc-card:hover h3 a.svc-title, .svc-card:focus-within h3 a.svc-title { color: var(--coral-dark); }
+@media (max-width: 600px) {
+  .svc-card { padding: 0.9rem 0.6rem 1.1rem; border: 1px solid transparent; border-radius: var(--radius); background: transparent; }
+  .svc-card h3 a.svc-title { color: var(--teal-deep); text-decoration: none; }
+  .svc-card:hover { transform: none; border-color: transparent; background: transparent; box-shadow: none; }
+  .svc-card:active, .svc-card:focus-within { border-color: var(--line); background: #fff; box-shadow: var(--shadow); }
+  .svc-card:active h3 a.svc-title { color: var(--coral-dark); }
+  .svc-card .svc-body { padding-top: 2rem; }
+}

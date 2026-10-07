@@ -13,7 +13,8 @@
 .dhc-toggle:hover .dhc-ico svg circle { fill: var(--teal-dark, #1f5d68); }
 .dhc-toggle-label { position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%); background: #fff; color: #161616; font-size: 0.875rem; font-weight: 600; white-space: nowrap; padding: 0.55rem 0.9rem; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); border-radius: 2px; }
 .dhc-toggle-label::after { content: ""; position: absolute; left: 100%; top: 50%; margin-top: -6px; border: 6px solid transparent; border-left-color: #fff; }
-.dhc.is-open .dhc-toggle-label, .dhc.has-chatted .dhc-toggle-label { display: none; }
+.dhc-toggle-label { display: none; }
+.dhc.has-label:not(.is-open):not(.has-chatted) .dhc-toggle-label { display: block; animation: dhcIn 0.3s ease both; }
 .dhc-close-x { display: none; font-size: 1.9rem; line-height: 1; font-weight: 300; }
 .dhc.is-open .dhc-ico { display: none; }
 .dhc.is-open .dhc-close-x { display: block; }
@@ -75,3 +76,18 @@
   .dhc-panel { width: calc(100vw - 28px); height: min(600px, calc(100vh - 92px)); }
 }
 @media (prefers-reduced-motion: reduce) { .dhc-panel, .dhc-typing span { animation: none; } }
+
+/* Round 28: coral launcher that nudges every 10 seconds with a soft highlight */
+.dhc-toggle { background: var(--coral, #ee707b); animation: dhcNudge 10s ease-in-out infinite; }
+.dhc-toggle:hover { background: var(--coral-dark, #d9545f); }
+.dhc-ico svg circle, .dhc-toggle:hover .dhc-ico svg circle { fill: #fff; }
+.dhc-ico svg path { fill: currentColor; }
+.dhc.is-open .dhc-toggle { animation: none; background: #161616; }
+@keyframes dhcNudge {
+  0%, 88%, 100% { transform: rotate(0); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(22, 63, 71, 0.25); filter: brightness(1); }
+  90% { transform: rotate(-10deg) scale(1.08); box-shadow: 0 0 0 7px rgba(238, 112, 123, 0.3), 0 8px 24px rgba(217, 84, 95, 0.4); filter: brightness(1.12); }
+  93% { transform: rotate(9deg) scale(1.08); }
+  96% { transform: rotate(-6deg) scale(1.06); box-shadow: 0 0 0 7px rgba(238, 112, 123, 0.3), 0 8px 24px rgba(217, 84, 95, 0.4); filter: brightness(1.12); }
+  98% { transform: rotate(3deg) scale(1.02); }
+}
+@media (prefers-reduced-motion: reduce) { .dhc-toggle { animation: none; } }
