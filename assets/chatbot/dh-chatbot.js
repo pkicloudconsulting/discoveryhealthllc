@@ -194,7 +194,7 @@
         '<header class="dhc-head"><span class="dhc-avatar"><img src="' + BASE + 'assets/img/logo-mark.png" alt=""></span><div><strong>Discovery Health assistant</strong><small><i class="dhc-dot"></i>Online now. Not for emergencies: call 911.</small></div><button class="dhc-close" type="button" aria-label="Close chat">&times;</button></header>' +
         '<div class="dhc-log" role="log" aria-live="polite"></div>' +
         '<div class="dhc-sugg" aria-label="Suggested questions"></div>' +
-        '<form class="dhc-form" autocomplete="off"><label class="dhc-sr" for="dhc-input">Type your question</label><input id="dhc-input" type="text" maxlength="300" placeholder="Type your question"><button type="submit" aria-label="Send">' +
+        '<form class="dhc-form" autocomplete="off"><label class="dhc-sr" for="dhc-input">Type your question</label><input id="dhc-input" type="text" maxlength="300" placeholder="Type something..."><button type="submit" aria-label="Send">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button></form>' +
         '<p class="dhc-foot">Automated assistant. Please do not share medical details here.</p>' +
       "</section>";
@@ -207,11 +207,11 @@
     form.addEventListener("submit", function (e) { e.preventDefault(); var v = input.value; input.value = ""; handle(v); });
     var saved = load();
     if (saved && saved.s) {
-      state = saved.s; (saved.h || []).forEach(function (m) { addMsg(m.text, m.who, true); });
+      state = saved.s; if (saved.s.started) root.classList.add("has-chatted"); (saved.h || []).forEach(function (m) { addMsg(m.text, m.who, true); });
       if (saved.open) { root.classList.add("is-open"); toggle.setAttribute("aria-expanded", "true"); panel.hidden = false; renderChips(); }
     }
     /* nudge label appears after a few seconds on first visit, hides once used */
-    if (!saved) setTimeout(function () { root.classList.add("has-label"); }, 3500);
+    root.classList.add("has-label");
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build); else build();
 })();

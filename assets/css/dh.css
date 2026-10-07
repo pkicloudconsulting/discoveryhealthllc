@@ -843,7 +843,14 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .nav-open .site-nav .nav-drop a.all { color: var(--coral); border: 0; margin: 0; }
   .nav-open .header-ctas { margin-top: auto; width: min(100%, 420px); gap: 0.6rem; padding-top: 1.5rem; }
   .nav-open .header-ctas .btn { width: 100%; justify-content: center; border-radius: 6px; font-family: "Montserrat", var(--font); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.86rem; padding: 1rem 1.2rem; }
-  .nav-open .header-ctas .btn-primary { background: var(--teal-deep); }
   .nav-open .header-ctas .btn-phone { background: transparent; border-color: var(--teal-deep); color: var(--teal-deep); }
   .nav-open .nav-burger { border-color: transparent; }
 }
+
+/* ===================================================================== Round 26 */
+/* Logo: pulse and heart back on either side of home care, tighter */
+.brand-hc2 .brand-pulse-l { display: block; }
+.brand-hc2 { gap: 0.15rem; letter-spacing: 0.03em; font-size: 0.7rem; padding-left: 0; }
+.brand-hc2 .brand-pulse { width: 26px; height: 11px; }
+.brand-hc2 .brand-pulse-r { width: 26px; }
+@media (max-width: 960px) { .brand-hc2 { font-size: 0.6rem; } .brand-hc2 .brand-pulse, .brand-hc2 .brand-pulse-r { width: 20px; height: 9px; } }
