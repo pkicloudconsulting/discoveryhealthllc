@@ -598,3 +598,10 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
   .hero-lede .lede-phone { display: block; }
   .hero-lede { text-align: left; max-width: 34ch; text-wrap: pretty; margin-left: 0; }
 }
+
+/* Round 13: heartbeat wordmark (round 9 layout) with a serif DISCOVERY */
+.brand-v4 .brand-name { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 1.8rem; letter-spacing: 0.03em; line-height: 0.95; }
+.brand-v4 .brand-sub { margin-top: 0.22rem; }
+.footer-brand .logo-card .brand-v4 .brand-name { font-size: 1.5rem; }
+@media (max-width: 960px) { .brand-v4 .brand-name { font-size: 1.48rem; } }
+@media (max-width: 380px) { .brand-v4 .brand-name { font-size: 1.3rem; } }
