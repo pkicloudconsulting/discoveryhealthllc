@@ -234,11 +234,18 @@
     go(0); restart();
   })();
 
-  /* ---------- QR widget: hide for the session once dismissed ---------- */
+  /* ---------- QR widget (desktop): slides in, shakes once, leaves after about 5 seconds; returns on the next page load ---------- */
   (function () {
     var q = document.querySelector(".dh-qr"); if (!q) return;
-    try { if (sessionStorage.getItem("dhQrHide")) q.hidden = true; } catch (e) {}
+    if (!window.matchMedia("(min-width: 767px)").matches) return;
+    var t1, t2, t3;
+    var hide = function () { q.classList.remove("is-in", "is-shake"); };
+    t1 = setTimeout(function () { q.classList.add("is-in"); }, 1200);
+    t2 = setTimeout(function () { q.classList.add("is-shake"); }, 2000);
+    t3 = setTimeout(hide, 6500);
+    q.addEventListener("mouseenter", function () { clearTimeout(t3); });
+    q.addEventListener("mouseleave", function () { clearTimeout(t3); t3 = setTimeout(hide, 2000); });
     var c = q.querySelector(".dh-qr__close");
-    if (c) c.addEventListener("click", function () { q.hidden = true; try { sessionStorage.setItem("dhQrHide", "1"); } catch (e) {} });
+    if (c) c.addEventListener("click", function () { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); hide(); });
   })();
 })();
