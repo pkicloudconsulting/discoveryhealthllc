@@ -154,19 +154,28 @@
       if (hp && hp.value) return; /* honeypot */
       var data = new FormData(form);
       var btn = form.querySelector("button[type=submit]");
+      var mailto = function () {
+        var lines = [];
+        data.forEach(function (v, k) { if (k !== "website" && v) lines.push(k.replace(/_/g, " ") + ": " + v); });
+        var subject = "Care inquiry from " + (data.get("name") || "website visitor");
+        window.location.href = "mailto:" + OFFICE_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+        say("ok", "Your email app should open with your message ready to send. If it does not, email " + OFFICE_EMAIL + " or call " + PHONE_DISPLAY + ".");
+      };
       if (FORM_ENDPOINT) {
-        btn.disabled = true;
-        fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) })
-          .then(function () { form.reset(); say("ok", "Thank you. Your message has been sent. We will be in touch soon."); })
-          .catch(function () { say("err", "Sorry, the message could not be sent. Please call " + PHONE_DISPLAY + " or email " + OFFICE_EMAIL + "."); })
-          .then(function () { btn.disabled = false; });
+        var payload = {}; data.forEach(function (v, k) { payload[k] = v; }); payload.page = location.pathname;
+        btn.disabled = true; btn.textContent = "Sending...";
+        fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+          .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
+          .then(function (res) {
+            if (res.ok) { form.reset(); say("ok", "Thank you. Your message has been sent. We will be in touch, usually within one business day."); return; }
+            if (res.j && res.j.code === "not_configured") { mailto(); return; }
+            say("err", (res.j && res.j.error) || ("Sorry, the message could not be sent. Please call " + PHONE_DISPLAY + " or email " + OFFICE_EMAIL + "."));
+          })
+          .catch(function () { mailto(); })
+          .then(function () { btn.disabled = false; btn.textContent = "Send message"; });
         return;
       }
-      var lines = [];
-      data.forEach(function (v, k) { if (k !== "website" && v) lines.push(k.replace(/_/g, " ") + ": " + v); });
-      var subject = "Care inquiry from " + (data.get("name") || "website visitor");
-      window.location.href = "mailto:" + OFFICE_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-      say("ok", "Your email app should open with your message ready to send. If it does not, email " + OFFICE_EMAIL + " or call " + PHONE_DISPLAY + ".");
+      mailto();
     });
   }
 

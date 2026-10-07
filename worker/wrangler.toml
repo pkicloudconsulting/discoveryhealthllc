@@ -1,0 +1,12 @@
+# Cloudflare Worker for the Discovery Health LLC contact form.
+#   python3 worker/build.py        (inlines the logo into contact-worker.js)
+#   cd worker && npx wrangler deploy
+#   npx wrangler secret put RESEND_API_KEY
+name = "dh-contact"
+main = "contact-worker.js"
+compatibility_date = "2024-11-01"
+
+# Rate limit + duplicate guard. The id is filled in when the namespace is created.
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "__KV_ID__"
