@@ -662,3 +662,18 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 /* Service names: Rethink Sans everywhere, sentence case */
 .svc-card h3 { font-family: "Rethink Sans", var(--font); font-weight: 700; font-size: 1.08rem; letter-spacing: -0.01em; text-transform: none; color: var(--teal-deep); }
 .service-block h2 { font-weight: 700; letter-spacing: -0.02em; }
+
+/* ===================================================================== Round 18 */
+/* Logo: lower-case wordmark, health llc between the pulse and the heart, home care centred with fine rules */
+.brand-v4 { align-items: center; text-align: center; }
+.brand-v4 .brand-name { text-transform: lowercase; letter-spacing: 0; font-size: 1.95rem; line-height: 0.85; }
+.brand-v4 .brand-sub { justify-content: center; gap: 0.3rem; margin-top: 0.25rem; text-transform: lowercase; letter-spacing: 0.08em; }
+.brand-v4 .brand-hl { letter-spacing: 0.08em; text-transform: lowercase; }
+.brand-v4 .brand-pulse { width: 26px; height: 11px; }
+.brand-v4 .brand-hc { display: flex; align-items: center; justify-content: center; gap: 0.4em; text-transform: lowercase; letter-spacing: 0.3em; padding-left: 0.3em; margin-top: 0.2rem; }
+.brand-v4 .brand-hc i { display: block; width: 0.9em; height: 1px; background: currentColor; opacity: 0.6; }
+.footer-brand .logo-card .brand-v4 .brand-name { font-size: 1.7rem; }
+@media (max-width: 960px) { .brand-v4 .brand-name { font-size: 1.62rem; } .brand-v4 .brand-pulse { width: 20px; } }
+@media (max-width: 380px) { .brand-v4 .brand-name { font-size: 1.42rem; } }
+/* Hero note back to a sentence, set in Fraunces italic */
+.hero-note { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: 0.01em; }
