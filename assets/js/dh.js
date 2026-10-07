@@ -16,13 +16,14 @@
   if (header && burger) {
     burger.addEventListener("click", function () {
       var open = header.classList.toggle("nav-open");
+      document.body.classList.toggle("menu-open", open);
       burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && header.classList.contains("nav-open")) { header.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); burger.focus(); }
+      if (e.key === "Escape" && header.classList.contains("nav-open")) { header.classList.remove("nav-open"); document.body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); burger.focus(); }
     });
     document.addEventListener("click", function (e) {
-      if (header.classList.contains("nav-open") && !header.contains(e.target)) { header.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); }
+      if (header.classList.contains("nav-open") && !header.contains(e.target)) { header.classList.remove("nav-open"); document.body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); }
     });
   }
   var page = document.body.getAttribute("data-page");

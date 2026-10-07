@@ -814,3 +814,36 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .svc-card h3 { font-size: 0.86rem; letter-spacing: 0.18em; }
   .svc-card p { font-size: 0.92rem; line-height: 1.65; max-width: 28ch; margin: 0 auto; }
 }
+
+/* ===================================================================== Round 25 */
+/* Hero: description now sits under the buttons */
+.hero-content .hero-lede { margin: 0.2rem 0 0; }
+@media (max-width: 600px) { .hero-content .hero-lede { font-size: 0.9rem; } }
+/* Footer: services line in place of the slogan */
+.footer-services { font-family: "Fraunces", Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--coral-soft); margin: 0 0 0.6rem; line-height: 1.5; }
+
+/* Phone menu, Commonwise style: full-screen white panel, centred spaced capitals, Find Care Now pinned to the bottom */
+@media (max-width: 960px) {
+  body.menu-open { overflow: hidden; }
+  .site-header.nav-open { backdrop-filter: none; -webkit-backdrop-filter: none; background: #fff; }
+  .nav-open .nav-burger, .nav-open .brand { position: relative; z-index: 2; }
+  .site-header::after { position: relative; z-index: 3; }
+  .nav-open .site-nav { position: fixed; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 0; padding: 92px 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px)); border: 0; box-shadow: none; background: #fff; overflow-y: auto; animation: dhRise 0.35s ease both; }
+  .nav-open .site-nav a.nav-link, .nav-open .site-nav .nav-item > a.nav-link { font-family: "Montserrat", var(--font); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-deep); border: 0; padding: 1.05rem 0; text-align: center; }
+  .nav-open .site-nav > a.nav-link:first-child { margin-top: auto; }
+  .nav-open .nav-item { flex-direction: column; align-items: center; border: 0; }
+  .nav-open .nav-item > .nav-link { flex: none; display: inline-flex; align-items: center; gap: 0.35rem; }
+  .nav-open .nav-item > .nav-link::before { content: ""; width: 0.95em; }
+  .nav-open .nav-sub-toggle { position: absolute; width: 0; height: 0; opacity: 0; pointer-events: none; }
+  .nav-open .nav-item .nav-caret { display: inline-block; font-size: 0; width: 0.5rem; height: 0.5rem; border-right: 2px solid var(--teal-deep); border-bottom: 2px solid var(--teal-deep); transform: translateY(-1px) rotate(-45deg); transition: transform 0.25s; margin-left: 0.15rem; }
+  .nav-open .nav-item.is-open .nav-caret { transform: translateY(-3px) rotate(45deg); }
+  body.menu-open .dhc, body.menu-open .dh-qr { display: none; }
+  .nav-open .nav-item.is-open .nav-drop { display: grid; gap: 0; width: min(100%, 420px); padding: 0 0 0.6rem; text-align: center; }
+  .nav-open .site-nav .nav-drop a { font-family: "Montserrat", var(--font); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); padding: 0.55rem 0.5rem; border-radius: 0; }
+  .nav-open .site-nav .nav-drop a.all { color: var(--coral); border: 0; margin: 0; }
+  .nav-open .header-ctas { margin-top: auto; width: min(100%, 420px); gap: 0.6rem; padding-top: 1.5rem; }
+  .nav-open .header-ctas .btn { width: 100%; justify-content: center; border-radius: 6px; font-family: "Montserrat", var(--font); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.86rem; padding: 1rem 1.2rem; }
+  .nav-open .header-ctas .btn-primary { background: var(--teal-deep); }
+  .nav-open .header-ctas .btn-phone { background: transparent; border-color: var(--teal-deep); color: var(--teal-deep); }
+  .nav-open .nav-burger { border-color: transparent; }
+}
