@@ -620,3 +620,21 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 /* the short hero description is now used at every size */
 .hero-lede .lede-phone { display: inline; }
 .svc-card h3 { font-size: 0.92rem; }
+
+/* ===================================================================== Round 15 */
+/* Logo: mixed-case Fraunces italic "Discovery" */
+.brand-v4 .brand-name { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 600; text-transform: none; letter-spacing: -0.01em; font-size: 2rem; line-height: 0.9; font-variation-settings: "SOFT" 100, "WONK" 1; }
+.brand-v4 .brand-sub { margin-top: 0.28rem; }
+.footer-brand .logo-card .brand-v4 .brand-name { font-size: 1.7rem; }
+@media (max-width: 960px) { .brand-v4 .brand-name { font-size: 1.7rem; } }
+@media (max-width: 380px) { .brand-v4 .brand-name { font-size: 1.5rem; } }
+/* Inner pages: service names in Rethink Sans */
+.service-block h2, .anchor-nav a, .nav-drop a, .site-footer ul a, .page-hero h1 { font-family: "Rethink Sans", var(--font); letter-spacing: -0.01em; }
+.service-block h2 { font-weight: 600; color: var(--teal-deep); }
+.page-hero h1 { font-weight: 700; }
+@media (max-width: 600px) {
+  .phone-hide { display: none; }
+  /* consumer-directed photo is portrait: give it a taller frame on phones so more of the scene shows */
+  .svc-card .svc-photo:has(img[src*="care-dressing-help-1"]) { aspect-ratio: 1 / 1; }
+  .svc-card .svc-photo img[src*="care-dressing-help-1"] { object-position: center 30%; }
+}
