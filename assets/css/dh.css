@@ -605,3 +605,18 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 .footer-brand .logo-card .brand-v4 .brand-name { font-size: 1.5rem; }
 @media (max-width: 960px) { .brand-v4 .brand-name { font-size: 1.48rem; } }
 @media (max-width: 380px) { .brand-v4 .brand-name { font-size: 1.3rem; } }
+
+/* ===================================================================== Round 14 */
+/* Type: Bodoni Moda for DISCOVERY, Zen Antique Soft for HEALTH LLC and headings, Figtree stays for body copy */
+.brand-v4 .brand-name { font-family: "Bodoni Moda", "Didot", Georgia, serif; font-weight: 700; letter-spacing: 0.04em; }
+.brand-v4 .brand-hl { font-family: "Zen Antique Soft", Georgia, serif; font-weight: 400; letter-spacing: 0.26em; }
+h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .res-card h3, .faq summary, .cta-band h2, .article-cta h2 { font-family: "Zen Antique Soft", Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: 0; }
+.svc-card h3, .pillar h3 { letter-spacing: 0.06em; }
+.faq summary { font-size: 1.05rem; }
+/* Cards show title + Learn more at every size (descriptions live on the linked pages) */
+.svc-card p, .thrive-item p, .res-card p, .hide-phone { display: none; }
+.svc-card .svc-body { gap: 0.6rem; }
+
+/* the short hero description is now used at every size */
+.hero-lede .lede-phone { display: inline; }
+.svc-card h3 { font-size: 0.92rem; }
