@@ -370,7 +370,7 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 /* ===================================================================== Round 2 */
 /* Header colour stripe (BrightStar-style) */
 .site-header { border-bottom: 0; }
-.site-header::after { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--coral) 0 25%, var(--teal) 25% 50%, var(--purple) 50% 75%, var(--yellow) 75% 100%); }
+.site-header::after { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--coral) 0 25%, var(--teal) 25% 50%, var(--purple) 50% 75%, var(--teal-light) 75% 100%); }
 
 /* Services dropdown: stays open while the pointer moves from the link to the panel (dh.js adds .is-hover with a delay) */
 .nav-item { position: relative; display: flex; align-items: center; }
@@ -512,4 +512,14 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
   .hero-title { font-size: clamp(1.3rem, 6vw, 1.75rem); }
   .hero-lede { font-size: 0.86rem; line-height: 1.5; max-width: none; }
   .hero-content, .hero-ctas, .footer-grid, .footer-bottom, .steps .step, .expect-panel, .contact-card { text-align: left; justify-content: flex-start; }
+}
+
+/* ===================================================================== Round 6: phone hero breathing room */
+@media (max-width: 600px) {
+  .hero { min-height: min(78vh, 660px); }
+  .hero-content { justify-content: flex-end; padding-block: 4.5rem 5.4rem; }
+  .hero-slogan { margin-bottom: 0.5rem; }
+  .hero-title { margin-bottom: 0.7rem; }
+  .hero-ctas { margin: 1.2rem 0 0.9rem; gap: 0.6rem; }
+  .hero .hero-car-dots { bottom: 46px; }
 }
