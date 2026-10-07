@@ -677,3 +677,28 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 @media (max-width: 380px) { .brand-v4 .brand-name { font-size: 1.42rem; } }
 /* Hero note back to a sentence, set in Fraunces italic */
 .hero-note { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: 0.01em; }
+
+/* ===================================================================== Round 19 */
+/* Logo: Signify-style two-tone joined wordmark, Home Care in gold between the pulse and the heart */
+.brand-v5 { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.brand-word { font-family: "Nunito", var(--font); font-size: 2rem; letter-spacing: -0.02em; display: flex; align-items: baseline; white-space: nowrap; }
+.brand-word b { font-weight: 900; color: var(--teal-deep); }
+.brand-word em { font-style: normal; font-weight: 600; color: var(--teal); }
+.brand-word small { font-size: 0.42em; font-weight: 800; letter-spacing: 0.08em; color: var(--teal-deep); margin-left: 0.25em; align-self: flex-start; margin-top: 0.35em; }
+.brand-v5 .brand-hc { display: flex; align-items: center; justify-content: center; gap: 0.35rem; margin-top: 0.2rem; font-family: "Nunito", var(--font); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.06em; text-transform: none; color: #c0904f; }
+.brand-v5 .brand-pulse { width: 34px; height: 14px; color: var(--coral); }
+.footer-brand .logo-card .brand-word { font-size: 1.7rem; }
+@media (max-width: 960px) { .brand-word { font-size: 1.62rem; } .brand-v5 .brand-hc { font-size: 0.72rem; } .brand-v5 .brand-pulse { width: 26px; height: 12px; } }
+@media (max-width: 380px) { .brand-word { font-size: 1.4rem; } }
+@media (max-width: 600px) {
+  .hero-content { padding-block: 4.5rem 2.6rem; }
+  .hero .hero-car-dots { bottom: 38px; }
+  #services .section-head h2 { font-size: 1.32rem; }
+  .svc-grid { gap: 2.6rem; }
+  .svc-card { border: 0; background: transparent; box-shadow: none; align-items: center; text-align: center; }
+  .svc-card:hover { transform: none; box-shadow: none; }
+  .svc-card .svc-photo, .svc-card .svc-photo:has(img[src*="care-dressing-help-1"]) { width: 76%; margin: 0 auto; aspect-ratio: 9 / 8; border-radius: 4px; }
+  .svc-card .svc-icon { display: none; }
+  .svc-card .svc-body { align-items: center; padding: 1.1rem 0 0; gap: 0.45rem; }
+  .svc-card h3 { font-size: 0.98rem; letter-spacing: 0.12em; text-transform: uppercase; }
+}
