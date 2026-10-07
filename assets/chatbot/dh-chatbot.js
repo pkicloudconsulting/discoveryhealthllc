@@ -189,9 +189,9 @@
     root.innerHTML =
       '<button class="dhc-toggle" type="button" aria-expanded="false" aria-controls="dhc-panel" aria-label="Chat with the Discovery Health assistant">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
-        '<span class="dhc-toggle-label">Chat with us</span></button>' +
+        '<span class="dhc-toggle-label">Chat us</span></button>' +
       '<section class="dhc-panel" id="dhc-panel" role="dialog" aria-label="Discovery Health assistant" hidden>' +
-        '<header class="dhc-head"><div><strong>Discovery Health assistant</strong><small>Answers in seconds. Not for emergencies: call 911.</small></div><button class="dhc-close" type="button" aria-label="Close chat">&times;</button></header>' +
+        '<header class="dhc-head"><span class="dhc-avatar"><img src="' + BASE + 'assets/img/logo-mark.png" alt=""></span><div><strong>Discovery Health assistant</strong><small><i class="dhc-dot"></i>Online now. Not for emergencies: call 911.</small></div><button class="dhc-close" type="button" aria-label="Close chat">&times;</button></header>' +
         '<div class="dhc-log" role="log" aria-live="polite"></div>' +
         '<div class="dhc-sugg" aria-label="Suggested questions"></div>' +
         '<form class="dhc-form" autocomplete="off"><label class="dhc-sr" for="dhc-input">Type your question</label><input id="dhc-input" type="text" maxlength="300" placeholder="Type your question"><button type="submit" aria-label="Send">' +
