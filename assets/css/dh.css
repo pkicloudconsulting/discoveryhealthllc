@@ -541,3 +541,13 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 .footer-brand .logo-card .brand-name { font-size: 1.3rem; }
 @media (max-width: 960px) { .brand img.brand-mark { height: 44px; } .brand-name { font-size: 1.3rem; } .brand-sub { font-size: 0.58rem; } }
 @media (max-width: 380px) { .brand-name { font-size: 1.15rem; } .brand-sub { letter-spacing: 0.24em; } }
+
+/* ===================================================================== Round 9: flyer-style wordmark (DISCOVERY / HEALTH LLC + coral pulse and heart) */
+.brand { gap: 0.65rem; }
+.brand-name { font-size: 1.62rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; line-height: 0.95; color: var(--teal-deep); }
+.brand-sub { margin-top: 0.3rem; gap: 0.45rem; font-size: 0.74rem; letter-spacing: 0.34em; color: var(--teal); }
+.brand-hl { white-space: nowrap; }
+.brand-pulse { width: 46px; height: 12px; color: var(--coral); flex: none; }
+.footer-brand .logo-card .brand-name { font-size: 1.35rem; }
+@media (max-width: 960px) { .brand-name { font-size: 1.34rem; } .brand-sub { font-size: 0.62rem; letter-spacing: 0.3em; } .brand-pulse { width: 38px; height: 10px; } }
+@media (max-width: 380px) { .brand-name { font-size: 1.2rem; } .brand-pulse { width: 30px; } }
