@@ -876,3 +876,10 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .svc-card:active h3 a.svc-title { color: var(--coral-dark); }
   .svc-card .svc-body { padding-top: 2rem; }
 }
+
+/* ===================================================================== Round 29 */
+/* Logo: lower-case "discovery" in Snell Roundhand Bold (rendered image); script sits a little larger than "health" */
+.brand img.brand-script { height: 1.5em; vertical-align: calc(-1.5em * 0.3209); margin-right: 0.02em; }
+.brand-v4 .brand-word2 { gap: 0.05em; }
+/* Phones: hero copy slightly higher */
+@media (max-width: 600px) { .hero-content { padding-block: 4.5rem 6.6rem; } }

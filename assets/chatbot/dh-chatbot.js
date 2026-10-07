@@ -191,12 +191,12 @@
         '<span class="dhc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c5 0 9 3.4 9 7.6 0 4.2-4 7.6-9 7.6-1 0-2-.1-2.9-.4L5 20l1-3.6C4.2 15 3 13 3 10.6 3 6.4 7 3 12 3z" fill="currentColor"/><circle cx="8.4" cy="10.7" r="1.2" fill="#fff"/><circle cx="12" cy="10.7" r="1.2" fill="#fff"/><circle cx="15.6" cy="10.7" r="1.2" fill="#fff"/></svg></span>' +
         '<span class="dhc-toggle-label">Chat us</span><span class="dhc-close-x" aria-hidden="true">&times;</span></button>' +
       '<section class="dhc-panel" id="dhc-panel" role="dialog" aria-label="Discovery Health assistant" hidden>' +
-        '<header class="dhc-head"><span class="dhc-avatar"><img src="' + BASE + 'assets/img/logo-mark.png" alt=""></span><div><strong>Discovery Health assistant</strong><small><i class="dhc-dot"></i>Online now. Not for emergencies: call 911.</small></div><button class="dhc-close" type="button" aria-label="Close chat">&times;</button></header>' +
+        '<header class="dhc-head"><span class="dhc-avatar"><img src="' + BASE + 'assets/img/logo-mark.png" alt=""></span><div><strong>Discovery Health assistant</strong><small><i class="dhc-dot"></i>Online &middot; typically replies instantly</small></div><button class="dhc-close" type="button" aria-label="Close chat">&times;</button></header>' +
         '<div class="dhc-log" role="log" aria-live="polite"></div>' +
         '<div class="dhc-sugg" aria-label="Suggested questions"></div>' +
-        '<form class="dhc-form" autocomplete="off"><label class="dhc-sr" for="dhc-input">Type your question</label><input id="dhc-input" type="text" maxlength="300" placeholder="Type something..."><button type="submit" aria-label="Send">' +
+        '<form class="dhc-form" autocomplete="off"><label class="dhc-sr" for="dhc-input">Type your question</label><input id="dhc-input" type="text" maxlength="300" placeholder="Type your question&hellip;"><button type="submit" aria-label="Send">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button></form>' +
-        '<p class="dhc-foot">Automated assistant. Please do not share medical details here.</p>' +
+        '<p class="dhc-foot">Automated assistant. Not for emergencies: call 911. Please do not share medical details here.</p>' +
       "</section>";
     document.body.appendChild(root);
     toggle = root.querySelector(".dhc-toggle"); panel = root.querySelector(".dhc-panel"); log = root.querySelector(".dhc-log");
