@@ -854,3 +854,10 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 .brand-hc2 .brand-pulse { width: 26px; height: 11px; }
 .brand-hc2 .brand-pulse-r { width: 26px; }
 @media (max-width: 960px) { .brand-hc2 { font-size: 0.6rem; } .brand-hc2 .brand-pulse, .brand-hc2 .brand-pulse-r { width: 20px; height: 9px; } }
+
+/* ===================================================================== Round 27: "Discovery" set in Matura MT Script Capitals (rendered image), "health" stays live text */
+.brand-v4 .brand-word2 { align-items: baseline; gap: 0.1em; letter-spacing: -0.02em; }
+.brand img.brand-script { height: 1.1em; width: auto; display: inline-block; vertical-align: calc(-1.1em * 0.2943); margin-right: 0.05em; flex: none; }
+.brand-v4 .brand-word2 { font-size: 1.7rem; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 1.28rem; } .brand img.brand-mark { height: 40px; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 1.1rem; } .brand img.brand-mark { height: 36px; } }
