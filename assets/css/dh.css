@@ -702,3 +702,19 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .svc-card .svc-body { align-items: center; padding: 1.1rem 0 0; gap: 0.45rem; }
   .svc-card h3 { font-size: 0.98rem; letter-spacing: 0.12em; text-transform: uppercase; }
 }
+
+/* ===================================================================== Round 20: reviews read like testimonials */
+.rev-stage::before, .rev-stage::after { display: none; }
+.rev-item { align-items: center; }
+.rev-mark { display: block; font-family: "Fraunces", Georgia, serif; font-size: 5.5rem; line-height: 0.6; height: 2.6rem; color: var(--coral); margin-bottom: 0.4rem; }
+.rev-stars { display: block; color: #f2c14e; letter-spacing: 0.25em; font-size: 1rem; margin-bottom: 1rem; }
+.rev-quote { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(1.15rem, 1.9vw, 1.5rem); line-height: 1.55; max-width: 760px; margin-inline: auto; }
+.rev-quote::before { content: "\201C"; } .rev-quote::after { content: "\201D"; }
+.rev-who { font-weight: 700; letter-spacing: 0.04em; }
+.rev-who::before { content: ""; display: block; width: 36px; height: 2px; background: var(--coral-soft); margin: 0 auto 0.8rem; }
+@media (max-width: 600px) {
+  .rev-mark { font-size: 4.2rem; height: 2rem; }
+  .rev-item { align-items: flex-start; }
+  .rev-who::before { margin-left: 0; }
+  .rev-quote { font-size: 1.05rem; }
+}
