@@ -45,6 +45,22 @@ email app with the message prefilled (mailto to office@). Point it at a backend 
 Cloudflare Worker that relays to email) to send silently; the form posts URL-encoded fields with
 `mode: no-cors`, honeypot field `website`.
 
+## Chatbot
+
+`assets/chatbot/dh-chatbot.js` is a rule-based assistant (no backend): topics and FAQ answers live at the
+top of the file, matched by keywords. An emergency regex answers "call 911" before anything else. State is
+kept in sessionStorage. Edit the FAQ list to change answers; bump `?ver=` on both chatbot files afterwards.
+
+## Reviews and QR widget (home page)
+
+The "What people are saying" quotes are placeholders written for layout. Replace them with real,
+permissioned client reviews before launch. The QR card (bottom left, desktop only) encodes
+`assets/img/site-qr.png`, currently the GitHub Pages URL. Regenerate it when the custom domain goes live:
+
+```
+python3 -c "import qrcode; qrcode.make('https://www.discoveryhealthllc.com/').save('assets/img/site-qr.png')"
+```
+
 ## Editing
 
 - Each page carries its own header and footer. Edit them in every file when the nav changes.

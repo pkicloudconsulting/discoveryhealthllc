@@ -169,4 +169,67 @@
       say("ok", "Your email app should open with your message ready to send. If it does not, email " + OFFICE_EMAIL + " or call " + PHONE_DISPLAY + ".");
     });
   }
+
+  /* ---------- Services dropdown ----------
+     Desktop: the panel opens on hover and stays open for 350ms after the pointer leaves, so moving from the
+     link down into the panel never snaps it shut. Phone: a chevron button expands the list inline. */
+  (function () {
+    var items = [].slice.call(document.querySelectorAll(".nav-item"));
+    if (!items.length) return;
+    var phone = window.matchMedia("(max-width: 960px)");
+    items.forEach(function (item) {
+      var timer;
+      item.addEventListener("mouseenter", function () {
+        if (phone.matches) return;
+        clearTimeout(timer);
+        items.forEach(function (o) { if (o !== item) o.classList.remove("is-hover"); });
+        item.classList.add("is-hover");
+      });
+      item.addEventListener("mouseleave", function () { clearTimeout(timer); timer = setTimeout(function () { item.classList.remove("is-hover"); }, 350); });
+      item.addEventListener("keydown", function (e) { if (e.key === "Escape") item.classList.remove("is-hover"); });
+      var tog = item.querySelector(".nav-sub-toggle");
+      if (tog) tog.addEventListener("click", function () { var open = item.classList.toggle("is-open"); tog.setAttribute("aria-expanded", open ? "true" : "false"); });
+    });
+  })();
+
+  /* ---------- Reviews carousel ---------- */
+  (function () {
+    var root = document.querySelector(".reviews"); if (!root) return;
+    var items = [].slice.call(root.querySelectorAll(".rev-item"));
+    var dotsWrap = root.querySelector(".rev-dots");
+    var i = 0, n = items.length, timer = null, hovering = false;
+    var dots = items.map(function (it, k) {
+      var d = document.createElement("button"); d.type = "button"; d.className = "rev-dot";
+      d.setAttribute("aria-label", "Show review " + (k + 1));
+      d.addEventListener("click", function () { go(k); restart(); });
+      dotsWrap.appendChild(d); return d;
+    });
+    function go(k) {
+      i = (k + n) % n;
+      items.forEach(function (it, j) { it.classList.toggle("is-active", j === i); it.setAttribute("aria-hidden", j !== i); });
+      dots.forEach(function (d, j) { d.classList.toggle("is-active", j === i); d.setAttribute("aria-current", j === i ? "true" : "false"); });
+    }
+    function restart() { clearTimeout(timer); if (reduce || hovering || n < 2) return; timer = setTimeout(function () { go(i + 1); restart(); }, 7000); }
+    root.querySelector(".rev-arrow--prev").addEventListener("click", function () { go(i - 1); restart(); });
+    root.querySelector(".rev-arrow--next").addEventListener("click", function () { go(i + 1); restart(); });
+    root.addEventListener("mouseenter", function () { hovering = true; clearTimeout(timer); });
+    root.addEventListener("mouseleave", function () { hovering = false; restart(); });
+    var x0 = null;
+    root.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); restart(); }
+      x0 = null;
+    }, { passive: true });
+    go(0); restart();
+  })();
+
+  /* ---------- QR widget: hide for the session once dismissed ---------- */
+  (function () {
+    var q = document.querySelector(".dh-qr"); if (!q) return;
+    try { if (sessionStorage.getItem("dhQrHide")) q.hidden = true; } catch (e) {}
+    var c = q.querySelector(".dh-qr__close");
+    if (c) c.addEventListener("click", function () { q.hidden = true; try { sessionStorage.setItem("dhQrHide", "1"); } catch (e) {} });
+  })();
 })();

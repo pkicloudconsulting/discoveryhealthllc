@@ -19,7 +19,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/dh.css?ver=dh-1">
+<link rel="stylesheet" href="assets/css/dh.css?ver=dh-2">
+<link rel="stylesheet" href="assets/chatbot/dh-chatbot.css?ver=dh-2">
 <script type="application/ld+json">{
 "@context": "https://schema.org",
 "@type": "MedicalBusiness",
@@ -43,7 +44,7 @@
   <div class="container header-row">
     <a class="brand" href="" aria-label="Discovery Health LLC home"><img src="assets/img/logo-horizontal.png" alt="Discovery Health LLC, Home Care" width="434" height="100"></a>
     <nav class="site-nav" aria-label="Primary">
-      <a class="nav-link" data-nav="home" href="">Home</a><a class="nav-link" data-nav="services" href="services/">Services</a><a class="nav-link" data-nav="about" href="about/">About</a><a class="nav-link" data-nav="resources" href="resources/">Resources</a><a class="nav-link" data-nav="faq" href="faq/">FAQ</a><a class="nav-link" data-nav="contact" href="contact/">Contact</a>
+      <a class="nav-link" data-nav="home" href="">Home</a><div class="nav-item"><a class="nav-link" data-nav="services" href="services/">Services <span class="nav-caret" aria-hidden="true">&#9660;</span></a><button class="nav-sub-toggle" type="button" aria-label="Show services" aria-expanded="false"></button><div class="nav-drop"><a class="all" href="services/">All services</a><a href="services/#skilled-nursing">Skilled Nursing Services</a><a href="services/#home-care">Non-Skilled Home Care Services</a><a href="services/#consumer-directed">Consumer-Directed Services, CCC Plus Waiver</a><a href="services/#care-coordination">Care Coordination and Health Education</a><a href="services/#quality-safety">Quality, Safety, and Care Management Support</a></div></div><a class="nav-link" data-nav="about" href="about/">About</a><a class="nav-link" data-nav="resources" href="resources/">Resources</a><a class="nav-link" data-nav="faq" href="faq/">FAQ</a><a class="nav-link" data-nav="contact" href="contact/">Contact</a>
       <div class="header-ctas">
         <a class="btn btn-phone" href="tel:+12679397727"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="label">(267) 939-7727</span></a>
         <a class="btn btn-primary" href="contact/">Find Care Now</a>
@@ -80,7 +81,7 @@
   </div>
   <div class="container hero-content">
     <p class="hero-slogan rise" style="--d:.05s">Compassion. Quality. Independence. Always.</p>
-    <h1 class="hero-title rise" style="--d:.15s">Care that brings <span class="hero-word">Comfort</span> home.</h1>
+    <h1 class="hero-title rise" style="--d:.15s">Discover care that brings <span class="hero-word">Comfort</span> home.</h1>
     <p class="hero-lede rise" style="--d:.3s">Discovery Health LLC provides home health and community-based support services designed to promote health, independence, safety, and quality of life for individuals in their homes and communities.</p>
     <div class="hero-ctas rise" style="--d:.45s">
       <a class="btn btn-primary" href="contact/">Find Care Now</a>
@@ -203,24 +204,28 @@
   </div>
 </section>
 
-<!-- Different -->
-<section class="section section-wash">
-  <div class="container split">
-    <div class="shape reveal"><img src="assets/img/care-nurse-garden-1.jpeg" alt="A nurse and an older woman in a garden" style="object-position:60% center" loading="lazy" decoding="async"></div>
-    <div class="reveal">
-      <span class="eyebrow">What makes Discovery Health different?</span>
-      <h2>A Higher Standard of Care</h2>
-      <p>Discovery Health LLC was built on a simple promise: compassion, quality, and independence, always. Our nurses and caregivers take time to know you, document carefully, and communicate with everyone involved in your care.</p>
-      <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Nurse-led assessments.</strong> Every plan begins with a skilled nursing evaluation of needs, risks, and goals.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Individualized care plans</strong> that are monitored and reviewed as your condition changes.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Education for patients and caregivers,</strong> so you understand your condition, your medications, and your options.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Clear communication</strong> with physicians, support coordinators, and family, with records kept current.</span></li>
-      </ul>
-      <div class="btn-row">
-        <a class="btn btn-teal" href="about/">About Discovery Health</a>
-        <a class="btn btn-outline" href="services/">Our Services</a>
+<!-- Different: pale panel with the photo breaking out to the right -->
+<section class="section">
+  <div class="container">
+    <div class="expect reveal">
+      <div class="expect-panel">
+        <div class="inner">
+          <span class="eyebrow">What makes Discovery Health different?</span>
+          <h2>A Higher Standard of Care</h2>
+          <p>Discovery Health LLC was built on a simple promise: compassion, quality, and independence, always. Our nurses and caregivers take time to know you, document carefully, and communicate with everyone involved in your care.</p>
+          <ul class="checks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Nurse-led assessments.</strong> Every plan begins with a skilled nursing evaluation of needs, risks, and goals.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Individualized care plans</strong> that are monitored and reviewed as your condition changes.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Education for patients and caregivers,</strong> so you understand your condition, your medications, and your options.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Clear communication</strong> with physicians, support coordinators, and family, with records kept current.</span></li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-teal" href="about/">About Discovery Health</a>
+            <a class="btn btn-outline" href="services/">Our Services</a>
+          </div>
+        </div>
       </div>
+      <div class="expect-photo"><img src="assets/img/care-nurse-garden-1.jpeg" alt="A nurse and an older woman in a garden" style="object-position:60% center" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -233,6 +238,22 @@
       <h2>Four commitments behind every visit</h2>
     </div>
     <div class="pillars"><div class="pillar reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div><h3>Person-Centered Care</h3><p>Your goals, routines, and preferences shape every plan.</p></div><div class="pillar reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Safety</h3><p>Screened staff, careful documentation, and a close watch for change.</p></div><div class="pillar reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="9" r="2.5"/><circle cx="19" cy="9" r="2.5"/><path d="M8 20v-2a4 4 0 0 1 8 0v2"/><path d="M1 19v-1.5A3 3 0 0 1 4 14.5h1"/><path d="M23 19v-1.5a3 3 0 0 0-3-3h-1"/></svg></div><h3>Community</h3><p>Connected to your physicians, your family, and local resources.</p></div><div class="pillar reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.2" y1="10.2" x2="5.6" y2="11.6"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.4" y1="11.6" x2="19.8" y2="10.2"/><line x1="23" y1="22" x2="1" y2="22"/><polyline points="8 6 12 2 16 6"/></svg></div><h3>Better Health Tomorrows</h3><p>Education and prevention so today's care builds a healthier future.</p></div></div>
+  </div>
+</section>
+
+<!-- Reviews. PLACEHOLDER quotes written for layout only: replace with real, permissioned client reviews before launch. -->
+<section class="reviews" aria-label="What people are saying">
+  <div class="container">
+    <h2>What people are saying</h2>
+    <div class="rev-wrap">
+      <div class="rev-stage"><div class="rev-track"><figure class="rev-item is-active"><blockquote class="rev-quote">The nurse who visits my mother explains every medication change in plain language and calls me afterwards. For the first time since Dad passed, I am not doing this alone.</blockquote><figcaption class="rev-who">Esther, daughter of a client</figcaption></figure><figure class="rev-item"><blockquote class="rev-quote">After my hip surgery I wanted to be home, not in a facility. Discovery Health handled the wound care and watched my blood pressure, and I healed in my own bed.</blockquote><figcaption class="rev-who">Joyce, client</figcaption></figure><figure class="rev-item"><blockquote class="rev-quote">They helped me understand my CCC Plus options and walked me through hiring my own attendant. The paperwork would have buried me without them.</blockquote><figcaption class="rev-who">Ronald, consumer-directed participant</figcaption></figure><figure class="rev-item"><blockquote class="rev-quote">My father is a proud man and does not like help. His caregiver found a way to assist without taking over, and now he looks forward to her visits.</blockquote><figcaption class="rev-who">Perry, son of a client</figcaption></figure><figure class="rev-item"><blockquote class="rev-quote">As a support coordinator I need providers who document well and return calls. Discovery Health does both, every time.</blockquote><figcaption class="rev-who">Cassie, support coordinator</figcaption></figure></div></div>
+      <div class="rev-arrows">
+        <button class="rev-arrow rev-arrow--prev" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+        <button class="rev-arrow rev-arrow--next" type="button" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="rev-dots" role="group" aria-label="Choose a review"></div>
+    <a class="btn btn-primary" href="contact/">Find Care Now</a>
   </div>
 </section>
 
@@ -343,6 +364,17 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/dh.js?ver=dh-1"></script>
+<!-- Share / QR widget (desktop only). Regenerate assets/img/site-qr.png when the custom domain goes live. -->
+<div class="dh-qr" aria-label="Scan to open this site on your phone">
+  <div class="dh-qr__wrap">
+    <a class="dh-qr__card" href="https://pkicloudconsulting.github.io/discoveryhealthllc/">
+      <span class="dh-qr__qr"><img src="assets/img/site-qr.png" alt="QR code for the Discovery Health website" width="60" height="60"></span>
+      <span class="dh-qr__txt"><strong>Scan to share</strong>Open this site on your phone or send it to family.</span>
+    </a>
+    <button class="dh-qr__close" type="button" aria-label="Hide">&times;</button>
+  </div>
+</div>
+<script src="assets/js/dh.js?ver=dh-2"></script>
+<script src="assets/chatbot/dh-chatbot.js?ver=dh-2" defer></script>
 </body>
 </html>
