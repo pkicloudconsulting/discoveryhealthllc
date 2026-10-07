@@ -759,3 +759,19 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   main > .steps h2, main > .steps .lead, main > .steps .step, main > .steps .steps-options > div, main > .reviews, main > .cta-band { text-align: center; }
   main > .steps .step-house { margin-inline: auto; }
 }
+
+/* ===================================================================== Round 22 */
+/* Logo: Signify-style lower-case "discoveryhealth" (bold + regular, same dark), home care line beneath */
+.brand-v4 .brand-word2 { font-family: "Nunito Sans", var(--font); font-size: 1.85rem; letter-spacing: -0.035em; line-height: 1; color: var(--teal-deep); font-weight: 400; white-space: nowrap; }
+.brand-v4 .brand-word2 b { font-weight: 800; }
+.brand-hc2 { display: flex; align-items: center; justify-content: center; gap: 0.3rem; margin-top: 0.22rem; font-family: "Nunito Sans", var(--font); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; color: #c0904f; }
+.brand-hc2 .brand-pulse { width: 28px; height: 12px; color: var(--coral); }
+.footer-brand .logo-card .brand-word2 { font-size: 1.6rem; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 1.55rem; } .brand-hc2 { font-size: 0.66rem; } .brand-hc2 .brand-pulse { width: 22px; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 1.36rem; } }
+/* Phones: a short line of information under each service, Commonwise spacing */
+@media (max-width: 600px) {
+  .svc-card p { display: block; font-family: "Montserrat", var(--font); font-size: 0.9rem; line-height: 1.6; color: var(--ink-soft); max-width: 30ch; margin: 0.2rem auto 0.3rem; flex: none; }
+  .svc-grid { gap: 3.2rem; }
+  .svc-card .svc-body { gap: 0.55rem; padding-top: 1.3rem; }
+}
