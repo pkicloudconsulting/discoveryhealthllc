@@ -370,7 +370,7 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 /* ===================================================================== Round 2 */
 /* Header colour stripe (BrightStar-style) */
 .site-header { border-bottom: 0; }
-.site-header::after { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--coral) 0 20%, var(--teal) 20% 40%, var(--yellow) 40% 60%, var(--purple) 60% 80%, var(--teal-light) 80% 100%); }
+.site-header::after { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--coral) 0 25%, var(--teal) 25% 50%, var(--purple) 50% 75%, var(--yellow) 75% 100%); }
 
 /* Services dropdown: stays open while the pointer moves from the link to the panel (dh.js adds .is-hover with a delay) */
 .nav-item { position: relative; display: flex; align-items: center; }
@@ -499,4 +499,17 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
   /* photos: wider, shorter crops and a soft natural grade so generated images read less glossy at small sizes */
   .svc-card .svc-photo, .thrive-item .shape, .res-card .res-photo { aspect-ratio: 16 / 10; }
   .svc-card .svc-photo img, .thrive-item .shape img, .res-card .res-photo img, .service-block .shape img, .split .shape img, .expect-photo img, .page-hero .shape img { filter: saturate(0.88) contrast(0.96) brightness(1.02) sepia(0.06); }
+}
+
+/* ===================================================================== Round 5 */
+.bg-yellow { background: #e0a82e; }
+@media (min-width: 901px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 601px) and (max-width: 900px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+.lede-short { display: none !important; }
+@media (max-width: 600px) {
+  .hl-a, .hl-b { display: block; }
+  .hl-b { white-space: nowrap; }
+  .hero-title { font-size: clamp(1.3rem, 6vw, 1.75rem); }
+  .hero-lede { font-size: 0.86rem; line-height: 1.5; max-width: none; }
+  .hero-content, .hero-ctas, .footer-grid, .footer-bottom, .steps .step, .expect-panel, .contact-card { text-align: left; justify-content: flex-start; }
 }

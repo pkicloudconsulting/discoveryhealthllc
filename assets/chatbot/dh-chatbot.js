@@ -19,7 +19,7 @@
 
   var FAQS = [
     { id: "overview", topic: "services", chip: "What services do you offer?", q: "What services do you offer?",
-      a: "Discovery Health LLC provides five kinds of support at home:\n\n• Skilled nursing services\n• Non-skilled home care (help with daily living)\n• Service Facilitation for Consumer-Directed Services under the CCC Plus Waiver\n• Care coordination and health education\n• Quality, safety and care management support\n\nYou can read the full lists on our [services page](services/).",
+      a: "Discovery Health LLC provides six kinds of support at home:\n\n• Skilled nursing services\n• Non-skilled home care (help with daily living)\n• Service Facilitation for Consumer-Directed Services under the CCC Plus Waiver\n• Care coordination and health education\n• Quality, safety and care management support\n• Transitional care and fall prevention\n\nYou can read the full lists on our [services page](services/).",
       kw: ["services", "offer", "provide", "do you do", "help with", "types of care"] },
     { id: "skilled", topic: "services", chip: "What is skilled nursing?", q: "What is skilled nursing?",
       a: "Skilled nursing is clinical care from a licensed nurse in your home: nursing assessments, medication management and education, wound care and dressing changes, post-hospital and post-surgical care, monitoring of vital signs, chronic disease management, and teaching for patients and caregivers. It is often ordered after a hospital stay, a surgery, or a change in a chronic condition. [More about skilled nursing](services/#skilled-nursing).",
@@ -73,6 +73,9 @@
       a: "Care is based on a written service agreement and an individualized plan of care that is reviewed and adjusted as your needs change. Schedules can be increased, reduced or paused with reasonable notice. Ask us about the notice period that applies to your services.",
       kw: ["contract", "commitment", "cancel", "cancellation", "notice", "agreement", "minimum hours"] },
 
+    { id: "falls", topic: "services", chip: "Help after a hospital stay?", q: "Can you help after a hospital stay or a fall?",
+      a: "Yes. Our transitional care and fall prevention service covers the move from hospital or rehab back home: reviewing discharge instructions, reconciling medications, checking the home for fall risks, helping with mobility, transfers and stairs, and teaching you and your family how to prevent falls. [Read more](services/#transitional-care).",
+      kw: ["fall", "falls", "fell", "fall prevention", "stairs", "balance", "rehab", "transition", "transitional", "after hospital", "going home", "mobility"] },
     { id: "contact", topic: "contact", chip: "How do I reach you?", q: "How do I contact Discovery Health?",
       a: "Call [" + PHONE + "](" + TEL + "), email [info@discoveryhealthllc.com](mailto:info@discoveryhealthllc.com) or [office@discoveryhealthllc.com](mailto:office@discoveryhealthllc.com), or use the [contact page](contact/). We aim to respond to messages within one business day.",
       kw: ["contact", "phone", "call", "email", "reach", "number", "address", "hours", "open", "speak", "talk to someone", "human", "person"] },

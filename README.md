@@ -8,7 +8,7 @@ Plain HTML, CSS and JavaScript. No build step, no framework. Deploys as-is to Gi
 
 ```
 index.html                 Home (rotating photo/clip hero, services, steps, thrive, FAQ, resources)
-services/                  All five service groups with anchors (#skilled-nursing, #home-care,
+services/                  All six service groups with anchors (#skilled-nursing, #home-care, #transitional-care,
                            #consumer-directed, #care-coordination, #quality-safety)
 about/                     Mission, values, how we work
 faq/                       Full FAQ accordion (the home page shows the first six)
