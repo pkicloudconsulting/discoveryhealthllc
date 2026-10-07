@@ -110,15 +110,15 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
   .hero .hero-car-dots { position: absolute; left: 0; right: 0; bottom: 96px; z-index: 3; }
   .hero-wave { position: relative; z-index: 2; margin-top: auto; }
 @media (max-width: 900px) {
-  .hero { min-height: min(84vh, 720px); }
+  .hero { min-height: min(66vh, 600px); }
   .hero .hero-car-frame::after { background: linear-gradient(180deg, rgba(22, 63, 71, 0.42) 0%, rgba(22, 63, 71, 0.6) 45%, rgba(22, 63, 71, 0.84) 100%); }
-  .hero-content { max-width: none; padding-block: 2.6rem 4.8rem; }
+  .hero-content { max-width: none; padding-block: 2rem 4.2rem; }
   .hero-title { font-size: clamp(1.65rem, 7vw, 2.3rem); }
   .hero-slogan { font-size: 1.3rem; }
   .hero-lede { font-size: 0.98rem; }
   .hero-ctas .btn { padding: 0.72rem 1.15rem; font-size: 0.93rem; }
   .hero-note { font-size: 0.86rem; }
-  .hero .hero-car-dots { bottom: 60px; }
+  .hero .hero-car-dots { bottom: 54px; }
   .hero-wave { height: 44px; }
 }
 .hero-wave { display: block; width: 100%; height: 70px; }
@@ -369,7 +369,8 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 
 /* ===================================================================== Round 2 */
 /* Header colour stripe (BrightStar-style) */
-.site-header::before { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--coral) 0 25%, var(--teal) 25% 50%, var(--purple) 50% 75%, var(--teal-light) 75% 100%); }
+.site-header { border-bottom: 0; }
+.site-header::after { content: ""; display: block; height: 5px; background: linear-gradient(90deg, var(--coral) 0 25%, var(--teal) 25% 50%, var(--purple) 50% 75%, var(--teal-light) 75% 100%); }
 
 /* Services dropdown: stays open while the pointer moves from the link to the panel (dh.js adds .is-hover with a delay) */
 .nav-item { position: relative; display: flex; align-items: center; }
@@ -450,3 +451,35 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 .dh-qr__txt { font-size: 0.78rem; line-height: 1.3; }
 .dh-qr__txt strong { display: block; font-size: 0.86rem; margin-bottom: 2px; }
 .dh-qr__close { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: #fff; color: var(--teal-deep); font-size: 15px; line-height: 1; cursor: pointer; box-shadow: var(--shadow-sm); }
+
+/* ===================================================================== Round 3: phone type scale */
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  h1 { font-size: clamp(1.7rem, 7vw, 2.1rem); }
+  h2 { font-size: clamp(1.45rem, 6vw, 1.8rem); }
+  h3 { font-size: 1.12rem; }
+  .section-head p, .page-hero .lede, .prose, .expect-panel p, .faq .faq-body { font-size: 1rem; }
+  .hero-title { font-size: clamp(1.45rem, 6.2vw, 1.85rem); }
+  .hero-slogan { font-size: 1.15rem; }
+  .hero-lede { font-size: 0.92rem; }
+  .hero-note { font-size: 0.8rem; }
+  .hero-ctas .btn { padding: 0.65rem 1.05rem; font-size: 0.9rem; }
+  .ribbon { font-size: 0.72rem; letter-spacing: 0.14em; }
+  .eyebrow { font-size: 0.72rem; }
+  .svc-card h3 { font-size: 0.8rem; }
+  .svc-card p { font-size: 0.92rem; }
+  .steps h2, .reviews h2, .page-hero h1, .expect-panel h2, .article .page-hero h1 { font-size: clamp(1.45rem, 6vw, 1.8rem); }
+  .steps .lead { font-size: 1rem; }
+  .step h3 { font-size: 1.12rem; } .step p { font-size: 0.92rem; }
+  .steps-options p { font-size: 1rem; }
+  .thrive-item h3 { font-size: 1.15rem; } .thrive-item p { font-size: 0.95rem; }
+  .pillar p { font-size: 0.9rem; }
+  .rev-quote { font-size: 1.02rem; } .rev-who { font-size: 0.88rem; }
+  .faq summary { font-size: 0.98rem; padding: 0.95rem 1.1rem; }
+  .res-card h3 { font-size: 1.05rem; } .res-card p { font-size: 0.92rem; }
+  .cta-band .script { font-size: 1.9rem; } .cta-band p { font-size: 0.95rem; }
+  .footer-brand .script { font-size: 1.3rem; }
+  .service-block h2 { font-size: 1.45rem; } .service-block .lead { font-size: 1rem; } .service-list li { font-size: 0.93rem; }
+  .prose h2 { font-size: 1.3rem; } .prose h3 { font-size: 1.1rem; }
+  .btn { font-size: 0.95rem; }
+}
