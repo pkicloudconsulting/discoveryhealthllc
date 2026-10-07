@@ -638,3 +638,27 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .svc-card .svc-photo:has(img[src*="care-dressing-help-1"]) { aspect-ratio: 1 / 1; }
   .svc-card .svc-photo img[src*="care-dressing-help-1"] { object-position: center 30%; }
 }
+
+/* ===================================================================== Round 17 */
+/* Logo: capital DISCOVERY with tight spacing, HEALTH LLC + pulse, HOME CARE underneath */
+.brand-v4 .brand-name { text-transform: uppercase; letter-spacing: 0.005em; font-size: 1.72rem; }
+.brand-v4 .brand-sub { letter-spacing: 0.12em; margin-top: 0.2rem; }
+.brand-v4 .brand-hl { letter-spacing: 0.12em; }
+.brand-hc { display: block; margin-top: 0.18rem; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.42em; text-transform: uppercase; color: var(--coral); }
+.footer-brand .logo-card .brand-v4 .brand-name { font-size: 1.5rem; }
+@media (max-width: 960px) { .brand-v4 .brand-name { font-size: 1.45rem; } .brand-hc { font-size: 0.5rem; } }
+@media (max-width: 380px) { .brand-v4 .brand-name { font-size: 1.28rem; } }
+/* Hero: service tags instead of a sentence */
+.hero-tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.hero-tags li { font-size: 0.95rem; color: #fff; background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 999px; padding: 0.3rem 0.8rem 0.3rem 0.65rem; display: inline-flex; align-items: center; gap: 0.45rem; backdrop-filter: blur(4px); }
+.hero-tags li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--coral-soft); flex: none; }
+.lede-short2 { display: none; }
+@media (max-width: 600px) {
+  .hero-lede .lede-phone { display: none !important; }
+  .hero-lede .lede-short2 { display: inline; }
+  .hero-lede { max-width: none; }
+  .hero-tags li { font-size: 0.8rem; padding: 0.25rem 0.7rem 0.25rem 0.55rem; }
+}
+/* Service names: Rethink Sans everywhere, sentence case */
+.svc-card h3 { font-family: "Rethink Sans", var(--font); font-weight: 700; font-size: 1.08rem; letter-spacing: -0.01em; text-transform: none; color: var(--teal-deep); }
+.service-block h2 { font-weight: 700; letter-spacing: -0.02em; }
