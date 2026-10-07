@@ -517,9 +517,14 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 /* ===================================================================== Round 6: phone hero breathing room */
 @media (max-width: 600px) {
   .hero { min-height: min(78vh, 660px); }
-  .hero-content { justify-content: flex-end; padding-block: 3.5rem 7.4rem; }
+  .hero-content { justify-content: flex-end; padding-block: 4.5rem 5.4rem; }
   .hero-slogan { margin-bottom: 0.5rem; }
   .hero-title { margin-bottom: 0.7rem; }
   .hero-ctas { margin: 1.2rem 0 0.9rem; gap: 0.6rem; }
   .hero .hero-car-dots { bottom: 46px; }
+}
+
+/* Round 7: last hero slide shows the whole pair on phones (wider image pinned to the top, fading into the teal) */
+@media (max-width: 600px) {
+  .hero .hero-car-slide.slide-wide img { inset: 0 auto auto -22%; width: 150%; max-width: none; height: auto; aspect-ratio: 3 / 2; object-fit: cover; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
 }
