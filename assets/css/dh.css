@@ -528,3 +528,16 @@ ul { margin: 0 0 1em; padding-left: 1.2em; }
 @media (max-width: 600px) {
   .hero .hero-car-slide.slide-wide img { inset: 0 auto auto -22%; width: 150%; max-width: none; height: auto; aspect-ratio: 3 / 2; object-fit: cover; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
 }
+
+/* ===================================================================== Round 8: live-text logo lockup (mark + wordmark) */
+.brand { gap: 0.7rem; color: var(--teal-deep); }
+.brand img.brand-mark { height: 54px; width: auto; flex: none; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--teal-deep); }
+.brand-sub { display: flex; align-items: center; gap: 0.5em; margin-top: 0.35rem; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--teal); }
+.brand-sub i { width: 5px; height: 5px; border-radius: 50%; background: #c0904f; flex: none; }
+.footer-brand .logo-card { display: inline-flex; align-items: center; padding: 0.75rem 1.1rem; }
+.footer-brand .logo-card img.brand-mark { height: 46px; }
+.footer-brand .logo-card .brand-name { font-size: 1.3rem; }
+@media (max-width: 960px) { .brand img.brand-mark { height: 44px; } .brand-name { font-size: 1.3rem; } .brand-sub { font-size: 0.58rem; } }
+@media (max-width: 380px) { .brand-name { font-size: 1.15rem; } .brand-sub { letter-spacing: 0.24em; } }
