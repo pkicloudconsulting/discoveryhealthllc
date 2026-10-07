@@ -691,8 +691,6 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 @media (max-width: 960px) { .brand-word { font-size: 1.62rem; } .brand-v5 .brand-hc { font-size: 0.72rem; } .brand-v5 .brand-pulse { width: 26px; height: 12px; } }
 @media (max-width: 380px) { .brand-word { font-size: 1.4rem; } }
 @media (max-width: 600px) {
-  .hero-content { padding-block: 4.5rem 2.6rem; }
-  .hero .hero-car-dots { bottom: 38px; }
   #services .section-head h2 { font-size: 1.32rem; }
   .svc-grid { gap: 2.6rem; }
   .svc-card { border: 0; background: transparent; box-shadow: none; align-items: center; text-align: center; }
@@ -717,4 +715,47 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .rev-item { align-items: flex-start; }
   .rev-who::before { margin-left: 0; }
   .rev-quote { font-size: 1.05rem; }
+}
+
+/* ===================================================================== Round 21 */
+.pki-link { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; color: var(--teal-deep) !important; border-radius: 999px; padding: 0.15rem 0.7rem 0.15rem 0.25rem; font-weight: 600; text-decoration: none !important; vertical-align: middle; }
+.pki-link img { width: 20px; height: 20px; object-fit: contain; }
+.pki-link:hover { background: var(--teal-tint); }
+
+/* Phones: Commonwise typography and rhythm from Our Services to the footer
+   (Commonwise uses Calluna serif headings, Gotham caps and Montserrat body; Crimson Pro and Montserrat are the free equivalents) */
+@media (max-width: 600px) {
+  main > .section, main > .steps, main > .reviews, main > .cta-band, .site-footer { font-family: "Montserrat", var(--font); text-align: center; }
+  main > .section h2, main > .steps h2, main > .reviews h2, .cta-band h2 { font-family: "Crimson Pro", Georgia, serif; font-weight: 500; font-size: 1.75rem; line-height: 1.2; letter-spacing: 0; color: var(--teal-deep); }
+  main > .steps h2, main > .reviews h2 { color: #fff; }
+  #services .section-head h2 { font-size: 1.6rem; }
+  main > .section { padding-block: 3.4rem; }
+  .section-head { text-align: center; margin: 0 auto 2.2rem; }
+  .section-head p, .cta-band p { margin-inline: auto; font-size: 0.95rem; line-height: 1.75; }
+  .eyebrow { font-family: "Montserrat", var(--font); font-size: 0.7rem; letter-spacing: 0.22em; font-weight: 700; }
+  .svc-card h3, .pillar h3, .thrive-item h3, .step h3, .res-card h3 { font-family: "Montserrat", var(--font); font-weight: 700; font-size: 0.88rem; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.5; }
+  .link-more { font-family: "Montserrat", var(--font); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .link-more::after { display: none; }
+  .svc-grid, .thrive-grid, .res-grid { gap: 2.8rem; }
+  .thrive-item, .res-card, .step, .pillar, .steps-options > div { text-align: center; align-items: center; }
+  .thrive-item .shape, .res-card .res-photo { width: 76%; margin-inline: auto; border-radius: 4px; }
+  .step { display: block; } .step-house { margin: 0 auto 0.8rem; }
+  .pillar .ic { margin-inline: auto; }
+  .expect-panel, .expect-panel .inner { text-align: center; }
+  .expect-panel .checks { text-align: left; }
+  .expect-panel .btn-row, .cta-band .btn-row, .btn-row { justify-content: center; }
+  .rev-item { align-items: center; } .rev-who::before { margin-inline: auto; }
+  .rev-dots, .rev-arrows { justify-content: center; }
+  .faq summary { font-family: "Montserrat", var(--font); font-size: 0.95rem; font-weight: 600; text-align: left; }
+  .faq .faq-body { text-align: left; }
+  .cta-band .script { font-size: 2rem; }
+  .footer-grid { text-align: center; gap: 2.2rem; }
+  .footer-brand .logo-card { margin-inline: auto; }
+  .footer-contact li { justify-content: center; grid-template-columns: auto auto; }
+  .footer-bottom { justify-content: center; text-align: center; }
+  .site-footer h4 { font-family: "Montserrat", var(--font); letter-spacing: 0.22em; }
+}
+@media (max-width: 600px) {
+  main > .steps h2, main > .steps .lead, main > .steps .step, main > .steps .steps-options > div, main > .reviews, main > .cta-band { text-align: center; }
+  main > .steps .step-house { margin-inline: auto; }
 }
