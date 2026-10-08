@@ -1397,3 +1397,20 @@ body { overflow-x: visible; }
 @media (max-width: 900px) { .hero.hero-privia .hero-car-frame::after { background: radial-gradient(ellipse at 30% 25%, rgba(248, 241, 228, 0.92) 0%, rgba(248, 241, 228, 0) 55%), linear-gradient(180deg, rgba(238, 245, 245, 0.84) 0%, rgba(217, 235, 236, 0.62) 55%, rgba(188, 220, 223, 0.5) 100%); } }
 /* HEALTH tucked right up under DISCOVERY */
 .brand-wm-text.privia .w2 { margin-top: 0.02rem; padding-left: 0.12em; }
+
+/* ===================================================================== Round 66 */
+/* Decorative curves from the hero down to the services heading (Privia-style) */
+main { position: relative; }
+.flow-lines { position: absolute; left: 0; top: 0; width: 100%; height: 1000px; z-index: 1; pointer-events: none; }
+.flow-lines .fl-y { stroke: var(--yellow); opacity: 0.85; }
+.flow-lines .fl-y2 { stroke: var(--yellow); opacity: 0.55; stroke-dasharray: 0.1 10; stroke-width: 3; }
+.flow-lines .fl-b { stroke: var(--beige); opacity: 0.9; }
+#services > .container { position: relative; z-index: 2; }
+.ribbon { position: relative; z-index: 0; }
+/* Phones: the full description, in yellow */
+@media (max-width: 600px) {
+  .hero-lede .lede-phone { display: inline !important; color: var(--yellow); }
+  .hero-lede .lede-short2 { display: none !important; }
+  .hero-lede { font-size: 0.9rem; max-width: none; }
+  .flow-lines { opacity: 0.75; }
+}

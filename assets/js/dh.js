@@ -160,6 +160,14 @@
     var t = setInterval(function () { if (!document.hidden) { base = (base + 1) % imgs.length; paint(); } }, 6200);
   })();
 
+  /* ---------- Flow lines: the decorative curves run from the top of the hero to the end of the services heading ---------- */
+  (function () {
+    var svg = document.querySelector(".flow-lines"); if (!svg) return;
+    var head = document.querySelector("#services .section-head"); var main = document.getElementById("main");
+    function size() { if (!head || !main) return; var h = head.getBoundingClientRect().bottom - main.getBoundingClientRect().top; svg.style.height = Math.max(400, Math.round(h)) + "px"; }
+    size(); window.addEventListener("resize", size); window.addEventListener("load", size);
+  })();
+
   /* ---------- Scroll reveal ---------- */
   var toReveal = [].slice.call(document.querySelectorAll(".reveal"));
   if (toReveal.length) {
