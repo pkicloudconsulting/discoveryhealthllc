@@ -1476,3 +1476,13 @@ main { position: relative; }
 @media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
   .hero-pulse-m .hpm-line { stroke-dasharray: 520; stroke-dashoffset: 520; }
 }
+
+/* Round 74: phone motif is a straight, faint dotted line with the icons along it; explicit sizing for Safari */
+@media (max-width: 900px) {
+  .hero-pulse-m { left: auto; right: 0; width: 66.6vw; height: calc(66.6vw * 72 / 400); aspect-ratio: 400 / 72; bottom: 60px; opacity: 0.45; }
+  .hero-pulse-m .hpm-steth, .hero-pulse-m .hpm-house { opacity: 0.75; }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .hero-pulse-m .hpm-line { stroke-dasharray: 200; stroke-dashoffset: 200; animation: dhDrawIn 2.4s ease-out 0.4s forwards; }
+  .hero-pulse-m .hpm-heart { opacity: 0; animation: dhFadeIn 1s ease-out 2.4s forwards; }
+}
