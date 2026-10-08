@@ -1162,3 +1162,17 @@ body { overflow-x: visible; }
 .brand .brand-script { height: 1.42em; vertical-align: calc(-1.42em * 0.3209); margin-right: 0; z-index: 2; }
 .brand-health { margin-left: -0.14em; letter-spacing: -0.03em; }
 .brand-v4 .brand-word2 { align-items: baseline; }
+
+/* ===================================================================== Round 49: Henry Ford Health style wordmark (wide capitals, two tones), plain three-line menu button */
+.brand-v4 .brand-word2 { font-family: "Lexend Exa", var(--font); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 1.12rem; line-height: 1; display: flex; align-items: baseline; gap: 0.38em; white-space: nowrap; color: var(--teal-deep); }
+.brand-w1 { color: var(--teal); }
+.brand-health { color: var(--teal-deep); font-weight: 700; margin: 0; letter-spacing: inherit; position: static; }
+.brand { column-gap: 0.55rem; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 0.86rem; letter-spacing: 0.04em; } .brand { column-gap: 0.45rem; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 0.76rem; } }
+.nav-burger { border: 0; background: transparent; width: 40px; height: 40px; border-radius: 0; }
+.nav-burger span { left: 8px; right: 8px; height: 2px; display: block; }
+.nav-burger span:nth-child(1) { top: 11px; } .nav-burger span:nth-child(2) { top: 19px; display: block; } .nav-burger span:nth-child(3) { top: 27px; }
+.nav-open .nav-burger span:nth-child(1), .nav-open .nav-burger span:nth-child(3) { top: 19px; }
+.nav-open .nav-burger span:nth-child(2) { opacity: 0; }
+.nav-open .nav-burger { border-color: transparent; }
