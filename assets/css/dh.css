@@ -1189,3 +1189,10 @@ body { overflow-x: visible; }
 .brand-v4 .brand-word2 { font-size: 1.12rem; }
 @media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 0.78rem; } }
 @media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 0.68rem; } }
+
+/* ===================================================================== Round 52: drawn wordmark in the Henry Ford Health manner (assets/img/wordmark.svg) */
+.brand-v4 .brand-word2 { display: block; line-height: 0; }
+.brand img.brand-wm { display: block; height: 17px; width: auto; }
+.footer-brand .logo-card img.brand-wm { height: 15px; }
+@media (max-width: 960px) { .brand img.brand-wm { height: 12px; } }
+@media (max-width: 380px) { .brand img.brand-wm { height: 10.5px; } }
