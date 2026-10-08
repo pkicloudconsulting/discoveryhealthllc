@@ -13,7 +13,8 @@
   --container: 1200px;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+html.smooth-scroll { scroll-behavior: smooth; }
 body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--paper); overflow-x: hidden; }
 img, video { max-width: 100%; display: block; }
 a { color: var(--teal); text-decoration: none; }
@@ -1052,3 +1053,32 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 .brand-v4 .brand-hc2 { padding-left: 0; font-size: 0.5rem; gap: 0.18rem; }
 .brand-v4 .brand-hc2 .brand-pulse, .brand-v4 .brand-hc2 .brand-pulse-r { width: 32px; height: 13px; }
 @media (max-width: 960px) { .brand-v4 .brand-hc2 { font-size: 0.44rem; } .brand-v4 .brand-hc2 .brand-pulse, .brand-v4 .brand-hc2 .brand-pulse-r { width: 24px; height: 10px; } }
+
+/* ===================================================================== Round 41 */
+/* Pages fade in; links to a service land in place instead of scrolling there */
+@keyframes dhPageIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: dhPageIn 0.45s ease-out both; }
+.service-block { scroll-margin-top: 124px; }
+@media (prefers-reduced-motion: reduce) { body { animation: none; } html.smooth-scroll { scroll-behavior: auto; } }
+/* Two-line menu button */
+.nav-burger span:nth-child(2) { display: none; }
+.nav-burger span:nth-child(1) { top: 18px; }
+.nav-burger span:nth-child(3) { top: 26px; }
+.nav-open .nav-burger span:nth-child(1), .nav-open .nav-burger span:nth-child(3) { top: 22px; }
+/* Contact page on phones: form in a white card first, plain contact list beneath (PMHS arrangement, same type sizes) */
+@media (max-width: 600px) {
+  .contact-grid { gap: 2rem; }
+  .contact-grid .form { order: 1; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.6rem 1.1rem 1.5rem; box-shadow: var(--shadow-sm); text-align: left; }
+  .contact-grid .field label { text-align: left; }
+  .contact-grid .field input, .contact-grid .field select, .contact-grid .field textarea { border-radius: 6px; }
+  .contact-grid .form .btn-row { justify-content: flex-start; }
+  .contact-grid .form .btn-row .btn { flex: 1 1 auto; justify-content: center; }
+  .contact-grid .contact-card { order: 2; background: transparent; padding: 0.25rem 0 0; border-radius: 0; text-align: left; }
+  .contact-grid .contact-card h2 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+  .contact-grid .contact-card ul { gap: 0.7rem; }
+  .contact-grid .contact-card li { grid-template-columns: 1fr; gap: 0; }
+  .contact-grid .contact-card li .ic { display: none; }
+  .contact-grid .contact-card li strong { display: inline; letter-spacing: 0; text-transform: none; font-size: inherit; margin-right: 0.35rem; }
+  .contact-grid .contact-card li strong::after { content: ":"; }
+  .contact-grid .contact-card .form-privacy { background: var(--teal-wash); border-radius: 10px; padding: 0.9rem 1rem; margin-top: 1.2rem; }
+}

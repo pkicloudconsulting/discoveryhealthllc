@@ -10,6 +10,9 @@
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Smooth scrolling only after the page has settled, so a link to a service lands in place without animating */
+  setTimeout(function () { document.documentElement.classList.add("smooth-scroll"); }, 500);
+
   /* ---------- Header navigation ---------- */
   var header = document.querySelector(".site-header");
   var burger = document.querySelector(".nav-burger");
