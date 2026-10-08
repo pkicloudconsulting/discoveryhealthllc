@@ -883,3 +883,8 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 .brand-v4 .brand-word2 { gap: 0.05em; }
 /* Phones: hero copy slightly higher */
 @media (max-width: 600px) { .hero-content { padding-block: 4.5rem 6.6rem; } }
+
+/* Round 30: PKI credit as plain logo + name, no pill */
+.pki-link { background: none !important; color: rgba(255, 255, 255, 0.9) !important; padding: 0; border-radius: 0; gap: 0.45rem; font-weight: 600; }
+.pki-link:hover { background: none !important; color: #fff !important; text-decoration: underline !important; }
+.pki-link img { width: 22px; height: 22px; }
