@@ -1291,3 +1291,51 @@ body { overflow-x: visible; }
 @media (min-width: 961px) and (max-width: 1200px) { .brand-wm-text.privia .w1 { font-size: 1.45rem; } .brand-wm-text.privia .w2 { font-size: 0.5rem; margin-top: 0.3rem; } }
 @media (max-width: 960px) { .brand-wm-text.privia .w1 { font-size: 1.15rem; } .brand-wm-text.privia .w2 { font-size: 0.42rem; margin-top: 0.25rem; } }
 @media (max-width: 380px) { .brand-wm-text.privia .w1 { font-size: 1rem; } .brand-wm-text.privia .w2 { font-size: 0.38rem; } }
+
+/* ===================================================================== Round 62: Privia-style hero on laptops */
+:root { --beige: #d9bf94; }
+/* typed phrase + caret */
+.hero-title .hero-word { display: inline; color: var(--coral); transition: none; }
+.hero-title .hero-word.is-out, .hero-title .hero-word.is-enter { opacity: 1; transform: none; }
+.hero-caret { display: inline-block; width: 3px; height: 0.95em; background: var(--beige); margin-left: 0.08em; vertical-align: -0.12em; animation: dhCaret 1s steps(1) infinite; }
+@keyframes dhCaret { 50% { opacity: 0; } }
+.hl-a, .hl-b { display: block; }
+.hl-b { min-height: 1.15em; }
+/* band under the hero */
+.ribbon.ribbon-lede { text-align: left; text-transform: none; letter-spacing: 0; font-size: 1rem; padding: 1.6rem 0; font-family: var(--font); }
+.ribbon.ribbon-lede p { margin: 0; color: #fff; font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.5rem); line-height: 1.4; border-left: 5px solid var(--beige); padding-left: 1.1rem; max-width: 760px; }
+.hero-lines, .hero-orbit { display: none; }
+.hero .hero-wave path { fill: var(--teal); }
+
+@media (min-width: 901px) {
+  .hero { background: radial-gradient(ellipse at 28% 40%, #f8f1e4 0%, rgba(248, 241, 228, 0) 46%), linear-gradient(100deg, #eef5f5 0%, #d9ebec 48%, #bcdcdf 100%); color: var(--ink); min-height: 600px; }
+  .hero .hero-carousel { display: none; }
+  .hero-lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  .hero-content { display: grid; grid-template-columns: minmax(0, 1fr) 600px; column-gap: 2rem; align-items: center; max-width: none; text-shadow: none; padding-block: 2.5rem 7rem; flex: 1; }
+  .hero-copy { max-width: 620px; }
+  .hero-slogan { color: var(--teal); }
+  .hero-title { color: var(--teal-deep); font-size: clamp(2.3rem, 3.6vw, 3.4rem); line-height: 1.12; }
+  .hero-title .hl-b { color: var(--teal); }
+  .hero-title .hero-word { color: var(--coral-dark); }
+  .hero-ctas { margin-top: 1.6rem; }
+  .hero-orbit { display: block; position: relative; width: 600px; height: 480px; justify-self: end; }
+  .orbit-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .orb { position: absolute; border-radius: 50%; overflow: hidden; background: var(--teal-tint); box-shadow: 0 0 0 4px #fff, 0 18px 40px rgba(22, 63, 71, 0.18); }
+  .orb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.9s ease; }
+  .orb img.is-on { opacity: 1; }
+  .orb-a { left: 130px; top: 230px; width: 200px; height: 200px; }
+  .orb-b { left: 325px; top: 35px; width: 150px; height: 150px; }
+  .orb-c { left: 420px; top: 220px; width: 160px; height: 160px; }
+  .orb-dot { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px #fff; }
+  .hero .hero-wave { position: relative; z-index: 2; margin-top: auto; height: 90px; }
+  .hero-content .hero-copy .rise { text-shadow: none; }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .hero-content { grid-template-columns: minmax(0, 1fr) 480px; }
+  .hero-orbit { transform: scale(0.8); transform-origin: right center; }
+}
+/* logo: closer letters, HEALTH spread beneath as on Privia */
+.brand-wm-text.privia .w1 { letter-spacing: 0.02em; margin-right: 0; }
+.brand-wm-text.privia .w2 { padding: 0 0.05em 0 0.1em; margin-top: 0.32rem; }
+/* Round 62b: first headline line stays on one line on wide screens; copy block a little wider */
+@media (min-width: 1201px) { .hero-title { font-size: clamp(2.1rem, 3.1vw, 3rem); } .hero-title .hl-a { white-space: nowrap; } .hero-copy { max-width: 680px; } }

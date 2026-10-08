@@ -42,7 +42,7 @@
   (function () {
     var root = document.querySelector(".hero-carousel"); if (!root) return;
     var slides = [].slice.call(root.querySelectorAll(".hero-car-slide"));
-    var word = document.querySelector(".hero-word");
+    var word = null; /* the headline phrase is typed by the typewriter below, not swapped per slide */
     var dotsWrap = root.querySelector(".hero-car-dots");
     var i = 0, n = slides.length, timer = null, hold = null, hovering = false;
     var STEP = 5000, HOLD = 900, SAFETY = 9000;
@@ -112,6 +112,50 @@
     }, { passive: true });
     document.addEventListener("visibilitychange", function () { if (document.hidden) clearTimeout(timer); else restart(); });
     go(0); restart();
+  })();
+
+  /* ---------- Hero typewriter: "Discover care that brings" stays, the phrase beneath is typed, held, deleted ---------- */
+  (function () {
+    var el = document.querySelector(".hero-word"); if (!el) return;
+    var words = [].slice.call(document.querySelectorAll(".hero-car-slide[data-word]")).map(function (s) { return s.getAttribute("data-word") + " home"; });
+    if (!words.length) words = ["Comfort home"];
+    if (reduce) { el.textContent = words[0]; return; }
+    var wi = 0, ci = 0, deleting = false;
+    el.textContent = "";
+    function tick() {
+      var w = words[wi];
+      if (!deleting) {
+        ci++; el.textContent = w.slice(0, ci);
+        if (ci >= w.length) { deleting = true; setTimeout(tick, 2400); return; }
+        setTimeout(tick, 75 + Math.random() * 60);
+      } else {
+        ci--; el.textContent = w.slice(0, ci);
+        if (ci <= 0) { deleting = false; wi = (wi + 1) % words.length; setTimeout(tick, 420); return; }
+        setTimeout(tick, 38);
+      }
+    }
+    setTimeout(tick, 700);
+  })();
+
+  /* ---------- Hero orbit (desktop): the carousel photos rotate through the three circles ---------- */
+  (function () {
+    var orbit = document.querySelector(".hero-orbit"); if (!orbit) return;
+    var imgs = [].slice.call(document.querySelectorAll(".hero-car-slide img")).map(function (i) { return { src: i.getAttribute("src"), pos: i.style.objectPosition || "center" }; });
+    var orbs = [].slice.call(orbit.querySelectorAll(".orb")); if (!imgs.length || !orbs.length) return;
+    var base = 0;
+    function paint() {
+      orbs.forEach(function (o, k) {
+        var im = imgs[(base + k * 2) % imgs.length];
+        var layers = o.querySelectorAll("img");
+        var show = layers[0].classList.contains("is-on") ? layers[1] : layers[0];
+        var hide = show === layers[0] ? layers[1] : layers[0];
+        show.src = im.src; show.style.objectPosition = im.pos;
+        show.classList.add("is-on"); hide.classList.remove("is-on");
+      });
+    }
+    paint();
+    if (reduce) return;
+    var t = setInterval(function () { if (!document.hidden) { base = (base + 1) % imgs.length; paint(); } }, 4200);
   })();
 
   /* ---------- Scroll reveal ---------- */
