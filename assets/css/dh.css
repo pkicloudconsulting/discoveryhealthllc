@@ -15,7 +15,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 html.smooth-scroll { scroll-behavior: smooth; }
-body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; color: var(--ink); background: var(--paper); }
 img, video { max-width: 100%; display: block; }
 a { color: var(--teal); text-decoration: none; }
 a:hover { color: var(--teal-dark); }
@@ -1129,9 +1129,7 @@ body { animation: dhPageIn 0.45s ease-out both; }
 
 /* ===================================================================== Round 45 */
 /* Phones: clip sideways overflow without turning the page into a second scroller (the earlier hidden rule could make Safari scroll past the footer) */
-body { overflow-x: clip; }
-main, .site-footer { overflow-x: clip; }
-@supports not (overflow-x: clip) { body { overflow-x: hidden; } }
+main, .site-footer, .site-header { overflow-x: clip; }
 /* Footer credit: one unbroken unit with a clearer mark */
 .pki-link { white-space: nowrap; gap: 0.5rem; }
 .pki-link img { width: 36px; height: 36px; padding: 3px; border-radius: 8px; }
@@ -1149,3 +1147,13 @@ main, .site-footer { overflow-x: clip; }
 .svc-grid .svc-card.reveal.in:nth-child(3), .svc-grid .svc-card.reveal.in:nth-child(6) { animation-delay: 0.2s; }
 @media (max-width: 600px) { .svc-grid .svc-card.reveal.in:nth-child(n) { animation-delay: 0s; } }
 @media (prefers-reduced-motion: reduce) { .svc-grid .svc-card.reveal.in:nth-child(n) { animation: none; } }
+
+/* ===================================================================== Round 47 */
+/* Phones: nothing on body/html controls overflow (Safari treated that as a second scroller); main, header and footer clip their own edges */
+body { overflow-x: visible; }
+/* Footer credit: mark and name as one tight unit */
+.pki-link { gap: 0.4rem; }
+.pki-link img { width: 34px; height: 34px; padding: 3px; }
+/* Logo: wordmark centred on the mark itself (not the mark plus its line), slightly closer */
+.brand-v4 .brand-word2 { grid-area: 1 / 2 / 2 / 3; align-self: center; }
+.brand { column-gap: 0.35rem; }
