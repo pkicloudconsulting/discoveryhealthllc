@@ -1247,3 +1247,15 @@ body { overflow-x: visible; }
 /* Service cards and service blocks: no round icons */
 .svc-icon, .service-block .badge { display: none; }
 .svc-card .svc-body { padding-top: 1.1rem; }
+
+/* ===================================================================== Round 56: drawn D (leading swoosh), R (curved leg) and Y after the Henry Ford letters */
+.brand-wm-text .dglyph, .brand-wm-text .rglyph { display: inline-block; height: 0.671em; width: auto; vertical-align: baseline; margin: 0; color: var(--teal); }
+.brand-wm-text .dglyph { margin-right: 0.07em; }
+.brand-wm-text .rglyph { margin: 0 0.07em 0 0.08em; }
+.brand-wm-text .yglyph { margin: 0 0.1em 0 0.05em; }
+
+/* ===================================================================== Round 57: wordmark sized like the Henry Ford header mark (cap height about 16px on laptops) */
+.brand-wm-text { font-size: 1.45rem; letter-spacing: 0.005em; word-spacing: 0.2em; }
+@media (min-width: 961px) and (max-width: 1200px) { .brand-wm-text { font-size: 1.05rem; } }
+@media (max-width: 960px) { .brand-wm-text { font-size: 0.95rem; } .brand img.brand-mark { height: 48px; } }
+@media (max-width: 380px) { .brand-wm-text { font-size: 0.84rem; } .brand img.brand-mark { height: 44px; } }
