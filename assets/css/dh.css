@@ -1236,3 +1236,14 @@ body { overflow-x: visible; }
 /* Round 54b: swoosh H sized from Syncopate Bold metrics (cap height 0.671em, stem 0.18em, H width 0.82em) and set on the baseline */
 .brand-wm-text .hswoosh { height: 0.671em; align-self: auto; position: static; margin-left: 0.19em; }
 .brand-wm-text .w2 { align-items: baseline; }
+
+/* ===================================================================== Round 55 */
+/* Wordmark: plain inline flow so the drawn Y and H sit on the text baseline in every browser; Y drawn after Henry Ford's */
+.brand-wm-text { display: inline-block; word-spacing: 0.22em; }
+.brand-wm-text .w1, .brand-wm-text .w2 { display: inline; }
+.brand-wm-text .yglyph, .brand-wm-text .hswoosh { display: inline-block; height: 0.671em; width: auto; vertical-align: baseline; position: static; margin: 0; }
+.brand-wm-text .yglyph { margin: 0 0.1em 0 0.14em; color: var(--teal); }
+.brand-wm-text .hswoosh { margin-left: 0.19em; }
+/* Service cards and service blocks: no round icons */
+.svc-icon, .service-block .badge { display: none; }
+.svc-card .svc-body { padding-top: 1.1rem; }
