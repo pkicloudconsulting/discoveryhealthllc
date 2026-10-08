@@ -1265,3 +1265,8 @@ body { overflow-x: visible; }
 
 /* Round 58b: longer tail reaching under the E, with a fuller coil */
 .brand-wm-text .yglyph { margin-left: -0.62em; }
+
+/* Round 59: smaller DISCOVERY, larger HEALTH, words tight together, tighter letters */
+.brand-wm-text { letter-spacing: -0.012em; word-spacing: 0.05em; }
+.brand-wm-text .w1 { font-size: 0.86em; }
+.brand-wm-text .w2 { font-size: 1.12em; }
