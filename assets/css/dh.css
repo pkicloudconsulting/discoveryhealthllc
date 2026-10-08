@@ -1270,3 +1270,15 @@ body { overflow-x: visible; }
 .brand-wm-text { letter-spacing: -0.012em; word-spacing: 0.05em; }
 .brand-wm-text .w1 { font-size: 0.86em; }
 .brand-wm-text .w2 { font-size: 1.12em; }
+
+/* ===================================================================== Round 60: lower-case "discovery" in Lexend Exa (Syncopate has no true lower case) with a drawn d and y; words touching; slightly smaller */
+.brand-wm-text { font-size: 1.3rem; letter-spacing: -0.012em; word-spacing: 0; }
+.brand-wm-text .w1 { font-family: "Lexend Exa", var(--font); font-weight: 700; text-transform: none; letter-spacing: -0.01em; font-size: 1em; }
+.brand-wm-text .w2 { font-size: 1.05em; margin-left: 0.1em; }
+.brand-wm-text .dglyph, .brand-wm-text .yglyph { height: 0.97em; vertical-align: -0.23em; width: auto; display: inline-block; position: relative; z-index: 1; }
+.brand-wm-text .dglyph { margin: 0 0.04em 0 0; }
+.brand-wm-text .yglyph { margin: 0 0 0 -0.12em; }
+.brand-wm-text .rglyph { display: none; }
+@media (min-width: 961px) and (max-width: 1200px) { .brand-wm-text { font-size: 1rem; } }
+@media (max-width: 960px) { .brand-wm-text { font-size: 0.9rem; } }
+@media (max-width: 380px) { .brand-wm-text { font-size: 0.8rem; } }
