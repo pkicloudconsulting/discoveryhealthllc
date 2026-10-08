@@ -45,7 +45,7 @@
     var word = null; /* the headline phrase is typed by the typewriter below, not swapped per slide */
     var dotsWrap = root.querySelector(".hero-car-dots");
     var i = 0, n = slides.length, timer = null, hold = null, hovering = false;
-    var STEP = 5000, HOLD = 900, SAFETY = 9000;
+    var STEP = 7000, HOLD = 900, SAFETY = 11000;
     var dots = slides.map(function (s, j) {
       var d = document.createElement("button");
       d.type = "button"; d.className = "hero-car-dot";
@@ -126,26 +126,29 @@
       var w = words[wi];
       if (!deleting) {
         ci++; el.textContent = w.slice(0, ci);
-        if (ci >= w.length) { deleting = true; setTimeout(tick, 2400); return; }
-        setTimeout(tick, 75 + Math.random() * 60);
+        if (ci >= w.length) { deleting = true; setTimeout(tick, 4400); return; }
+        setTimeout(tick, 95 + Math.random() * 70);
       } else {
         ci--; el.textContent = w.slice(0, ci);
         if (ci <= 0) { deleting = false; wi = (wi + 1) % words.length; setTimeout(tick, 420); return; }
-        setTimeout(tick, 38);
+        setTimeout(tick, 48);
       }
     }
-    setTimeout(tick, 700);
+    setTimeout(tick, 900);
   })();
 
   /* ---------- Hero orbit (desktop): the carousel photos rotate through the three circles ---------- */
   (function () {
     var orbit = document.querySelector(".hero-orbit"); if (!orbit) return;
-    var imgs = [].slice.call(document.querySelectorAll(".hero-car-slide img")).map(function (i) { return { src: i.getAttribute("src"), pos: i.style.objectPosition || "center" }; });
+    var LIST = ["hero-family-1-poster.jpeg|55% center", "care-wheelchair-1.jpeg|center 30%", "care-hug-cane-1.jpeg|55% 30%", "care-laughing-sofa-2.jpeg|center 35%",
+      "care-pill-bottle-table-1.jpeg|60% center", "care-nurse-garden-close-1.jpeg|center 30%", "care-blood-pressure-1.jpeg|center 35%", "care-walker-sofa-1.jpeg|center 35%",
+      "care-tablet-sofa-1.jpeg|60% 40%", "care-jenga-table-1.jpeg|center 50%", "care-nurse-garden-1.jpeg|70% center", "care-cane-brick-1.jpeg|center 30%"];
+    var imgs = LIST.map(function (x) { var p = x.split("|"); return { src: "assets/img/" + p[0], pos: p[1] }; });
     var orbs = [].slice.call(orbit.querySelectorAll(".orb")); if (!imgs.length || !orbs.length) return;
     var base = 0;
     function paint() {
       orbs.forEach(function (o, k) {
-        var im = imgs[(base + k * 2) % imgs.length];
+        var im = imgs[(base + k * 4) % imgs.length];
         var layers = o.querySelectorAll("img");
         var show = layers[0].classList.contains("is-on") ? layers[1] : layers[0];
         var hide = show === layers[0] ? layers[1] : layers[0];
@@ -155,7 +158,7 @@
     }
     paint();
     if (reduce) return;
-    var t = setInterval(function () { if (!document.hidden) { base = (base + 1) % imgs.length; paint(); } }, 4200);
+    var t = setInterval(function () { if (!document.hidden) { base = (base + 1) % imgs.length; paint(); } }, 6200);
   })();
 
   /* ---------- Scroll reveal ---------- */

@@ -1339,3 +1339,53 @@ body { overflow-x: visible; }
 .brand-wm-text.privia .w2 { padding: 0 0.05em 0 0.1em; margin-top: 0.32rem; }
 /* Round 62b: first headline line stays on one line on wide screens; copy block a little wider */
 @media (min-width: 1201px) { .hero-title { font-size: clamp(2.1rem, 3.1vw, 3rem); } .hero-title .hl-a { white-space: nowrap; } .hero-copy { max-width: 680px; } }
+
+/* ===================================================================== Round 63 */
+/* Logo: HEALTH left-aligned and spaced out beneath DISCOVERY, as on Privia */
+.brand-wm-text.privia .w2 { display: block; justify-content: flex-start; text-align: left; letter-spacing: 1.05em; font-size: 0.72rem; padding: 0 0 0 0.1em; margin-top: 0.3rem; }
+.brand-wm-text.privia .w2 i { display: inline; }
+@media (min-width: 961px) and (max-width: 1200px) { .brand-wm-text.privia .w2 { font-size: 0.58rem; } }
+@media (max-width: 960px) { .brand-wm-text.privia .w2 { font-size: 0.46rem; letter-spacing: 1em; } }
+@media (max-width: 380px) { .brand-wm-text.privia .w2 { font-size: 0.42rem; } }
+
+/* Hero: Privia layout at every size, with the photo carousel faint behind it */
+.hero.hero-privia { background: linear-gradient(100deg, #eef5f5 0%, #d9ebec 48%, #bcdcdf 100%); color: var(--ink); display: flex; flex-direction: column; }
+.hero.hero-privia .hero-carousel { display: block; position: absolute; inset: 0; z-index: 0; width: auto; margin: 0; }
+.hero.hero-privia .hero-car-frame { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; box-shadow: none; background: transparent; }
+.hero.hero-privia .hero-car-slide img, .hero.hero-privia .hero-car-slide video { filter: saturate(0.55); }
+.hero.hero-privia .hero-car-frame::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 28% 40%, rgba(248, 241, 228, 0.95) 0%, rgba(248, 241, 228, 0) 46%), linear-gradient(100deg, rgba(238, 245, 245, 0.9) 0%, rgba(217, 235, 236, 0.86) 48%, rgba(188, 220, 223, 0.82) 100%); }
+.hero.hero-privia .hero-car-dots { display: none; }
+.hero.hero-privia .hero-lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.hero.hero-privia .hero-content { position: relative; z-index: 3; text-shadow: none; }
+.hero.hero-privia .hero-wave { display: block; position: relative; z-index: 2; margin-top: auto; }
+.hero.hero-privia .orb img { transition: opacity 1.4s ease; }
+@media (max-width: 900px) {
+  .hero.hero-privia { min-height: 0; padding-top: 0; }
+  .hero.hero-privia .hero-content { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; max-width: none; padding: 2.4rem 0 0; margin: 0 auto; text-align: left; }
+  .hero.hero-privia .hero-copy { max-width: none; padding-bottom: 1.4rem; }
+  .hero.hero-privia .hero-slogan { color: var(--teal); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .hero.hero-privia .hero-title { color: var(--teal-deep); font-size: clamp(1.75rem, 7.6vw, 2.3rem); line-height: 1.15; margin-bottom: 0.5rem; }
+  .hero.hero-privia .hero-title .hl-b { color: var(--teal); }
+  .hero.hero-privia .hero-title .hero-word { color: var(--coral-dark); }
+  .hero.hero-privia .hero-ctas { justify-content: flex-start; margin: 1.1rem 0 0; }
+  .hero.hero-privia .hero-ctas .btn { padding: 0.8rem 1.4rem; font-size: 1rem; }
+  .hero.hero-privia .hero-orbit { display: block; position: relative; width: 600px; height: 480px; zoom: 0.56; align-self: flex-end; margin: 0.6rem -2.6rem -5rem 0; }
+  .hero.hero-privia .hero-wave { height: 64px; }
+  .ribbon.ribbon-lede { padding: 1.6rem 0 1.8rem; }
+  .ribbon.ribbon-lede p { text-align: center; font-size: 1.15rem; padding-left: 1rem; margin-right: 0; }
+}
+@media (max-width: 600px) { .hero.hero-privia .hero-content { padding-block: 2.2rem 0; justify-content: flex-start; } .hero.hero-privia .hero-orbit { zoom: 0.5; margin: 0.4rem -3.4rem -5rem 0; } }
+/* Round 63b: orbit pieces positioned at every size (they were only defined for laptops) */
+.hero-privia .orbit-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.hero-privia .orb { position: absolute; border-radius: 50%; overflow: hidden; background: var(--teal-tint); box-shadow: 0 0 0 4px #fff, 0 18px 40px rgba(22, 63, 71, 0.18); }
+.hero-privia .orb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; }
+.hero-privia .orb img.is-on { opacity: 1; }
+.hero-privia .orb-a { left: 130px; top: 230px; width: 200px; height: 200px; }
+.hero-privia .orb-b { left: 325px; top: 35px; width: 150px; height: 150px; }
+.hero-privia .orb-c { left: 420px; top: 220px; width: 160px; height: 160px; }
+.hero-privia .orb-dot { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 3px #fff; }
+/* faint photo behind: a touch lighter */
+.hero.hero-privia .hero-car-frame::after { background: radial-gradient(ellipse at 28% 40%, rgba(248, 241, 228, 0.96) 0%, rgba(248, 241, 228, 0) 46%), linear-gradient(100deg, rgba(238, 245, 245, 0.93) 0%, rgba(217, 235, 236, 0.9) 48%, rgba(188, 220, 223, 0.86) 100%); }
+/* Round 63c: phone orbit spans the width like Privia's */
+@media (max-width: 900px) { .hero.hero-privia .hero-orbit { zoom: 0.64; margin: 0.4rem -1.2rem -5.2rem 0; } }
+@media (max-width: 600px) { .hero.hero-privia .hero-orbit { zoom: 0.62; margin: 0.2rem -2rem -5.2rem 0; } }
