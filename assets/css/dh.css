@@ -1446,3 +1446,12 @@ main { position: relative; }
 /* Round 70: heartbeat motif kept inside the right third of the hero, low down */
 .hero-pulse { left: auto; right: 2%; width: 30vw; max-width: 460px; bottom: 84px; }
 @media (max-width: 900px) { .hero-pulse { width: 30vw; right: 3%; bottom: 60px; } }
+
+/* Round 71: the faint line draws in from left to right once, then the pulse keeps running along it */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-pulse .hp-ecg-base, .hero-pulse .hp-heart { stroke-dasharray: 700; stroke-dashoffset: 700; animation: dhDrawIn 3.2s ease-out forwards; }
+  .hero-pulse .hp-heart { animation-delay: 1.4s; }
+  .hero-pulse > path:last-child { opacity: 0; animation: dhFadeIn 1.2s ease-out 2.4s forwards; }
+  @keyframes dhFadeIn { to { opacity: 1; } }
+  @keyframes dhDrawIn { to { stroke-dashoffset: 0; } }
+}
