@@ -1157,3 +1157,8 @@ body { overflow-x: visible; }
 /* Logo: wordmark centred on the mark itself (not the mark plus its line), slightly closer */
 .brand-v4 .brand-word2 { grid-area: 1 / 2 / 2 / 3; align-self: center; }
 .brand { column-gap: 0.35rem; }
+
+/* ===================================================================== Round 48: discoveryHealth on one baseline (no longer hanging), badge unchanged */
+.brand .brand-script { height: 1.42em; vertical-align: calc(-1.42em * 0.3209); margin-right: 0; z-index: 2; }
+.brand-health { margin-left: -0.14em; letter-spacing: -0.03em; }
+.brand-v4 .brand-word2 { align-items: baseline; }
