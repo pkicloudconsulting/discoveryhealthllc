@@ -1493,3 +1493,5 @@ main { position: relative; }
 .brand-wm-text.privia { width: max-content; }
 .brand-wm-text.privia .w1 { width: max-content; }
 .brand-wm-text.privia .w2 { width: 0; min-width: 100%; box-sizing: border-box; }
+/* Round 76: LLC nudged a hair left so the C sits under the Y */
+.brand-wm-text.privia .w2 { padding-right: 0.3em; }
