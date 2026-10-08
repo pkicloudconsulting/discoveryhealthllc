@@ -1486,3 +1486,10 @@ main { position: relative; }
   .hero-pulse-m .hpm-line { stroke-dasharray: 200; stroke-dashoffset: 200; animation: dhDrawIn 2.4s ease-out 0.4s forwards; }
   .hero-pulse-m .hpm-heart { opacity: 0; animation: dhFadeIn 1s ease-out 2.4s forwards; }
 }
+
+/* Round 75: HEALTH LLC spread under DISCOVERY so the C lines up under the Y */
+.brand-wm-text.privia .w2 { display: flex; justify-content: space-between; letter-spacing: 0; padding: 0 0.04em 0 0.1em; }
+.brand-wm-text.privia .w2 i.gap { width: 0.6em; }
+.brand-wm-text.privia { width: max-content; }
+.brand-wm-text.privia .w1 { width: max-content; }
+.brand-wm-text.privia .w2 { width: 0; min-width: 100%; box-sizing: border-box; }
