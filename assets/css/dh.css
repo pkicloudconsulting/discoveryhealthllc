@@ -1468,3 +1468,11 @@ main { position: relative; }
   .hero-pulse-m .hpm-line { stroke-dasharray: 420; stroke-dashoffset: 420; animation: dhDrawIn 3.2s ease-out forwards; }
   .hero-pulse-m .hpm-heart { opacity: 0; animation: dhFadeIn 1s ease-out 2.6s forwards; }
 }
+
+/* Round 73: phone line runs from the start of the middle third to the right edge, low in the hero, very faint */
+@media (max-width: 900px) {
+  .hero-pulse-m { left: 33.4%; right: 0; width: auto; bottom: 46px; opacity: 0.32; }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .hero-pulse-m .hpm-line { stroke-dasharray: 520; stroke-dashoffset: 520; }
+}
