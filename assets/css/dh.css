@@ -1443,3 +1443,6 @@ main { position: relative; }
 .hero-title .hero-word { color: var(--coral-soft) !important; }
 .hero-pulse .hp-ecg-base { opacity: 0.55; }
 .hero-pulse .hp-ecg { stroke-width: 3; }
+/* Round 70: heartbeat motif kept inside the right third of the hero, low down */
+.hero-pulse { left: auto; right: 2%; width: 30vw; max-width: 460px; bottom: 84px; }
+@media (max-width: 900px) { .hero-pulse { width: 30vw; right: 3%; bottom: 60px; } }
