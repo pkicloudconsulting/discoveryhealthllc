@@ -1196,3 +1196,14 @@ body { overflow-x: visible; }
 .footer-brand .logo-card img.brand-wm { height: 15px; }
 @media (max-width: 960px) { .brand img.brand-wm { height: 12px; } }
 @media (max-width: 380px) { .brand img.brand-wm { height: 10.5px; } }
+
+/* ===================================================================== Round 53 */
+/* Wordmark: explicit size and ratio at every breakpoint so no browser can stretch it; tighter word gap baked into the SVG */
+.brand img.brand-wm { aspect-ratio: 1845.00 / 108.00; max-width: none; height: 17px; width: calc(17px * 17.0833); }
+.footer-brand .logo-card img.brand-wm { height: 15px; width: calc(15px * 17.0833); }
+.brand, .footer-brand .logo-card.brand { grid-template-columns: max-content max-content; }
+@media (max-width: 1200px) { .brand img.brand-wm { height: 15px; width: calc(15px * 17.0833); } }
+@media (max-width: 960px) { .brand img.brand-wm, .footer-brand .logo-card img.brand-wm { height: 12px; width: calc(12px * 17.0833); } }
+@media (max-width: 380px) { .brand img.brand-wm { height: 10.5px; width: calc(10.5px * 17.0833); } }
+/* Header: the phone button now opens Contact; on phones it shows the label */
+.site-nav .btn-phone[aria-current="page"] { background: var(--teal-tint); }
