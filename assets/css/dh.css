@@ -1042,3 +1042,13 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 .thrive-grid .thrive-item.reveal.in:nth-child(4) { animation-delay: 0.1s; }
 @media (max-width: 600px) { .thrive-grid .thrive-item.reveal.in { animation-delay: 0s; } }
 @media (prefers-reduced-motion: reduce) { .thrive-grid .thrive-item.reveal.in { animation: none; } }
+
+/* ===================================================================== Round 40 */
+/* Logo: discovery back to gold, drifting slowly between gold shades with no hard steps */
+@keyframes dhGoldShift { 0% { background-color: #a9772d; } 30% { background-color: #c9a053; } 55% { background-color: #b9893c; } 80% { background-color: #8f6424; } 100% { background-color: #a9772d; } }
+.brand .brand-script { background-color: #a9772d; animation: dhGoldShift 9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .brand .brand-script { animation: none; background-color: #a9772d; } }
+/* home care line: nudged left, smaller text, longer pulse and heart icons */
+.brand-v4 .brand-hc2 { padding-left: 0; font-size: 0.5rem; gap: 0.18rem; }
+.brand-v4 .brand-hc2 .brand-pulse, .brand-v4 .brand-hc2 .brand-pulse-r { width: 32px; height: 13px; }
+@media (max-width: 960px) { .brand-v4 .brand-hc2 { font-size: 0.44rem; } .brand-v4 .brand-hc2 .brand-pulse, .brand-v4 .brand-hc2 .brand-pulse-r { width: 24px; height: 10px; } }
