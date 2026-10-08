@@ -1207,3 +1207,32 @@ body { overflow-x: visible; }
 @media (max-width: 380px) { .brand img.brand-wm { height: 10.5px; width: calc(10.5px * 17.0833); } }
 /* Header: the phone button now opens Contact; on phones it shows the label */
 .site-nav .btn-phone[aria-current="page"] { background: var(--teal-tint); }
+
+/* ===================================================================== Round 54 */
+/* Wordmark: Syncopate capitals again (tighter, a touch bolder) with the drawn swoosh H closing HEALTH */
+.brand-v4 .brand-word2 { display: block; line-height: 1; }
+.brand-wm-text { font-family: "Syncopate", var(--font); font-weight: 700; font-size: 1.12rem; letter-spacing: 0.015em; text-transform: uppercase; white-space: nowrap; -webkit-text-stroke: 0.35px currentColor; color: var(--teal-deep); display: inline-flex; align-items: baseline; gap: 0.42em; }
+.brand-wm-text .w1 { color: var(--teal); }
+.brand-wm-text .w2 { color: var(--teal-deep); display: inline-flex; align-items: baseline; }
+.brand-wm-text .hswoosh { height: 0.72em; width: auto; fill: currentColor; margin-left: 0.07em; align-self: flex-end; position: relative; top: 0.01em; }
+@media (max-width: 1200px) { .brand-wm-text { font-size: 1rem; } }
+@media (max-width: 960px) { .brand-wm-text { font-size: 0.8rem; } }
+@media (max-width: 380px) { .brand-wm-text { font-size: 0.7rem; } }
+/* Footer card: a plain flex layout (mark, then wordmark with the badge beneath) so every browser renders it the same */
+.footer-brand .logo-card.brand { display: flex; align-items: center; gap: 0.7rem; padding: 0.8rem 1.1rem; }
+.footer-brand .logo-card .brand-text.brand-v4 { display: flex; flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+.footer-brand .logo-card .brand-word2 { grid-area: auto; }
+.footer-brand .logo-card .brand-hc2 { grid-area: auto; width: auto; min-width: 0; justify-content: flex-start; margin: 0; }
+.footer-brand .logo-card img.brand-mark { grid-area: auto; height: 60px; align-self: center; }
+/* Laptop header: wider row, logo further left, nav spread out like henryford.com */
+@media (min-width: 961px) {
+  .site-header .container { width: min(1400px, 100% - 3rem); }
+  .site-nav { gap: 2.3rem; }
+  .site-nav a.nav-link { font-size: 1.05rem; }
+  .header-ctas { gap: 1rem; margin-left: 0.6rem; }
+}
+@media (min-width: 961px) and (max-width: 1200px) { .site-nav { gap: 1.5rem; } .site-nav a.nav-link { font-size: 0.98rem; } }
+
+/* Round 54b: swoosh H sized from Syncopate Bold metrics (cap height 0.671em, stem 0.18em, H width 0.82em) and set on the baseline */
+.brand-wm-text .hswoosh { height: 0.671em; align-self: auto; position: static; margin-left: 0.19em; }
+.brand-wm-text .w2 { align-items: baseline; }
