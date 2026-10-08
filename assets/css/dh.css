@@ -1176,3 +1176,16 @@ body { overflow-x: visible; }
 .nav-open .nav-burger span:nth-child(1), .nav-open .nav-burger span:nth-child(3) { top: 19px; }
 .nav-open .nav-burger span:nth-child(2) { opacity: 0; }
 .nav-open .nav-burger { border-color: transparent; }
+
+/* ===================================================================== Round 50: wordmark in Cairo, the typeface henryford.com uses for its headings and navigation */
+.brand-v4 .brand-word2 { font-family: "Cairo", var(--font); font-weight: 800; letter-spacing: 0.06em; font-size: 1.3rem; gap: 0.45em; line-height: 1; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 0.98rem; letter-spacing: 0.05em; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 0.86rem; } }
+
+/* ===================================================================== Round 51: wordmark in Syncopate Bold, the closest free match to the Henry Ford Health lettering (wide, flat, extended capitals) */
+.brand-v4 .brand-word2 { font-family: "Syncopate", var(--font); font-weight: 700; letter-spacing: 0.04em; font-size: 1.02rem; gap: 0.5em; line-height: 1; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 0.76rem; letter-spacing: 0.03em; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 0.68rem; } }
+.brand-v4 .brand-word2 { font-size: 1.12rem; }
+@media (max-width: 960px) { .brand-v4 .brand-word2 { font-size: 0.78rem; } }
+@media (max-width: 380px) { .brand-v4 .brand-word2 { font-size: 0.68rem; } }
