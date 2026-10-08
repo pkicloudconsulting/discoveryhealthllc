@@ -1414,3 +1414,13 @@ main { position: relative; }
   .hero-lede { font-size: 0.9rem; max-width: none; }
   .flow-lines { opacity: 0.75; }
 }
+
+/* ===================================================================== Round 67: one faint heartbeat motif, bottom right of the hero (the flowing lines are gone) */
+.flow-lines { display: none; }
+.hero-pulse { position: absolute; right: 2%; bottom: 96px; width: min(560px, 42vw); height: auto; z-index: 1; opacity: 0.42; pointer-events: none; }
+.hero-pulse path:nth-child(2) { fill: rgba(242, 193, 78, 0.12); }
+@media (max-width: 900px) { .hero-pulse { width: 68vw; right: -4%; bottom: 64px; opacity: 0.38; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-pulse path:nth-child(1) { stroke-dasharray: 420; stroke-dashoffset: 420; animation: dhPulseDraw 7s ease-out infinite; }
+  @keyframes dhPulseDraw { 0% { stroke-dashoffset: 420; opacity: 0.2; } 45% { stroke-dashoffset: 0; opacity: 1; } 85% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0.2; } }
+}
