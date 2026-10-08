@@ -1097,3 +1097,19 @@ body { animation: dhPageIn 0.45s ease-out both; }
 .brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(1), .brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(3) { stroke-dasharray: 12; animation: dhEcgSide 1.8s linear infinite; }
 @keyframes dhEcgSide { 0% { stroke-dashoffset: 12; } 55%, 100% { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .brand-v4 .brand-hc2 .brand-pulse-l path, .brand-v4 .brand-hc2 .brand-pulse-r path { animation: none; stroke-dasharray: none; } }
+
+/* ===================================================================== Round 43 */
+/* No sideways scroll on phones: clip the page edge at the root too, and shorten the slide-in distance */
+html { overflow-x: hidden; }
+@keyframes svcInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+@keyframes svcInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
+/* Footer credit: clearer PKI mark */
+.pki-link img { width: 30px; height: 30px; object-fit: contain; background: #fff; border-radius: 6px; padding: 2px; }
+/* home care line: compact face with very tight letters; slow, calm heartbeat */
+.brand-v4 .brand-hc2 { font-family: "Rethink Sans", var(--font); font-weight: 700; letter-spacing: -0.02em; font-size: 0.56rem; gap: 0.12rem; }
+.brand-v4 .brand-hc2 .brand-pulse-l path { animation-duration: 6s; }
+@keyframes dhEcg { 0% { stroke-dashoffset: 64; opacity: 1; } 50% { stroke-dashoffset: 0; opacity: 1; } 80% { stroke-dashoffset: 0; opacity: 0.45; } 100% { stroke-dashoffset: 64; opacity: 0.45; } }
+.brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(2) { animation-duration: 3s; }
+@keyframes dhBeat { 0%, 100% { transform: scale(1); } 12% { transform: scale(1.1); } 24% { transform: scale(1); } 36% { transform: scale(1.06); } 48% { transform: scale(1); } }
+.brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(1), .brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(3) { animation-duration: 6s; }
+@media (max-width: 960px) { .brand-v4 .brand-hc2 { font-size: 0.48rem; } }
