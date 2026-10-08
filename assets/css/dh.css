@@ -1282,3 +1282,12 @@ body { overflow-x: visible; }
 @media (min-width: 961px) and (max-width: 1200px) { .brand-wm-text { font-size: 1rem; } }
 @media (max-width: 960px) { .brand-wm-text { font-size: 0.9rem; } }
 @media (max-width: 380px) { .brand-wm-text { font-size: 0.8rem; } }
+
+/* ===================================================================== Round 61: Privia Health style wordmark: light spaced DISCOVERY over small bold HEALTH spread to the same width */
+.brand-wm-text.privia { display: inline-flex; flex-direction: column; align-items: stretch; font-family: "Montserrat", var(--font); letter-spacing: 0; word-spacing: 0; -webkit-text-stroke: 0; line-height: 1; }
+.brand-wm-text.privia .w1 { display: block; font-family: "Montserrat", var(--font); font-weight: 300; font-size: 1.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-deep); line-height: 1; margin: 0 -0.1em 0 0; }
+.brand-wm-text.privia .w2 { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.6rem; letter-spacing: 0; text-transform: uppercase; color: var(--teal); margin: 0.38rem 0 0; padding: 0 0.1em 0 0.08em; line-height: 1; }
+.brand-wm-text.privia .w2 i { font-style: normal; }
+@media (min-width: 961px) and (max-width: 1200px) { .brand-wm-text.privia .w1 { font-size: 1.45rem; } .brand-wm-text.privia .w2 { font-size: 0.5rem; margin-top: 0.3rem; } }
+@media (max-width: 960px) { .brand-wm-text.privia .w1 { font-size: 1.15rem; } .brand-wm-text.privia .w2 { font-size: 0.42rem; margin-top: 0.25rem; } }
+@media (max-width: 380px) { .brand-wm-text.privia .w1 { font-size: 1rem; } .brand-wm-text.privia .w2 { font-size: 0.38rem; } }
