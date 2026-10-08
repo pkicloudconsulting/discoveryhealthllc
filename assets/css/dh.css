@@ -1430,3 +1430,16 @@ main { position: relative; }
   .hero-lede .lede-phone { display: none !important; }
   .hero-lede .lede-short2 { display: inline !important; color: rgba(255, 255, 255, 0.94); }
 }
+
+/* Round 69: continuous heartbeat motif with faint house and stethoscope; typed word matches phones on desktop */
+.hero-pulse { opacity: 0.45; }
+.hero-pulse .hp-heart { fill: rgba(242, 193, 78, 0.12); }
+.hero-pulse .hp-house, .hero-pulse .hp-steth { opacity: 0.6; }
+.hero-pulse path:nth-child(1), .hero-pulse path:nth-child(2) { animation: none; stroke-dasharray: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-pulse .hp-ecg { stroke-dasharray: 60 360; animation: dhEcgRun 6s linear infinite; }
+  @keyframes dhEcgRun { from { stroke-dashoffset: 420; } to { stroke-dashoffset: 0; } }
+}
+.hero-title .hero-word { color: var(--coral-soft) !important; }
+.hero-pulse .hp-ecg-base { opacity: 0.55; }
+.hero-pulse .hp-ecg { stroke-width: 3; }
