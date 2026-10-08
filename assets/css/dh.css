@@ -1082,3 +1082,18 @@ body { animation: dhPageIn 0.45s ease-out both; }
   .contact-grid .contact-card li strong::after { content: ":"; }
   .contact-grid .contact-card .form-privacy { background: var(--teal-wash); border-radius: 10px; padding: 0.9rem 1rem; margin-top: 1.2rem; }
 }
+
+/* ===================================================================== Round 42 */
+/* Logo: discovery holds teal for 15s, eases to the original gold for 3s, then eases back */
+@keyframes dhTealGold { 0%, 75% { background-color: var(--teal); } 80%, 95% { background-color: #a9772d; } 100% { background-color: var(--teal); } }
+.brand .brand-script { background-color: var(--teal); animation: dhTealGold 20s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .brand .brand-script { animation: none; background-color: var(--teal); } }
+/* home care line: a touch further left, tighter letters, living heartbeat and beating heart */
+.brand-v4 .brand-hc2 { margin-left: -0.35rem; letter-spacing: 0; gap: 0.14rem; }
+.brand-v4 .brand-hc2 .brand-pulse-l path { stroke-dasharray: 64; stroke-dashoffset: 64; animation: dhEcg 1.8s linear infinite; }
+@keyframes dhEcg { 0% { stroke-dashoffset: 64; opacity: 1; } 55% { stroke-dashoffset: 0; opacity: 1; } 85% { stroke-dashoffset: 0; opacity: 0.25; } 100% { stroke-dashoffset: 64; opacity: 0.25; } }
+.brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(2) { transform-box: fill-box; transform-origin: center; animation: dhBeat 1.2s ease-in-out infinite; }
+@keyframes dhBeat { 0%, 100% { transform: scale(1); } 14% { transform: scale(1.28); } 28% { transform: scale(1); } 42% { transform: scale(1.16); } 56% { transform: scale(1); } }
+.brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(1), .brand-v4 .brand-hc2 .brand-pulse-r path:nth-child(3) { stroke-dasharray: 12; animation: dhEcgSide 1.8s linear infinite; }
+@keyframes dhEcgSide { 0% { stroke-dashoffset: 12; } 55%, 100% { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .brand-v4 .brand-hc2 .brand-pulse-l path, .brand-v4 .brand-hc2 .brand-pulse-r path { animation: none; stroke-dasharray: none; } }
