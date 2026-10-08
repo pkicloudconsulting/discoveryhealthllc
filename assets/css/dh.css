@@ -929,3 +929,27 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
   .svc-card:active, .svc-card:focus-within { background: var(--teal-wash); border-color: var(--teal-tint); transform: none; }
   .svc-card:active h3 a.svc-title, .svc-card:active p { color: var(--coral-dark); }
 }
+
+/* ===================================================================== Round 33 */
+/* Logo: smaller, tighter-tracked discovery */
+.brand img.brand-script { height: 1.28em; vertical-align: calc(-1.28em * 0.3209); margin-right: 0.02em; }
+.brand-health { margin-left: -0.3em; }
+/* Services slide in from the sides as the page scrolls */
+@keyframes svcInLeft { from { opacity: 0; transform: translateX(-90px); } to { opacity: 1; transform: none; } }
+@keyframes svcInRight { from { opacity: 0; transform: translateX(90px); } to { opacity: 1; transform: none; } }
+@keyframes svcInUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
+.svc-grid .svc-card.reveal.in { animation: svcInLeft 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.svc-grid .svc-card.reveal.in:nth-child(even) { animation-name: svcInRight; }
+@media (min-width: 901px) {
+  .svc-grid .svc-card.reveal.in:nth-child(3n+1) { animation-name: svcInLeft; animation-delay: 0s; }
+  .svc-grid .svc-card.reveal.in:nth-child(3n+2) { animation-name: svcInUp; animation-delay: 0.12s; }
+  .svc-grid .svc-card.reveal.in:nth-child(3n) { animation-name: svcInRight; animation-delay: 0.24s; }
+}
+/* Services page: photo and text slide in from opposite sides */
+.service-block .shape.reveal.in { animation: svcInLeft 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.service-block > div.reveal.in { animation: svcInRight 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+@media (min-width: 861px) {
+  .service-block:nth-of-type(even) .shape.reveal.in { animation-name: svcInRight; }
+  .service-block:nth-of-type(even) > div.reveal.in { animation-name: svcInLeft; }
+}
+@media (prefers-reduced-motion: reduce) { .svc-grid .svc-card.reveal.in, .service-block .shape.reveal.in, .service-block > div.reveal.in { animation: none; } }
