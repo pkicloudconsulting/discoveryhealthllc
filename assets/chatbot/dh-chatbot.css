@@ -93,3 +93,6 @@
   .dhc-panel { width: calc(100vw - 28px); height: min(600px, calc(100vh - 92px)); }
 }
 @media (prefers-reduced-motion: reduce) { .dhc-toggle, .dhc-dot, .dhc-msg, .dhc-panel, .dhc-typing span, .dhc-toggle-label { animation: none; } }
+
+/* Round 32: the panel has its own close button, so the launcher hides while the chat is open */
+.dhc.is-open .dhc-toggle { display: none; }

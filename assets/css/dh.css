@@ -908,3 +908,24 @@ h1, h2, h3, .hero-title, .svc-card h3, .pillar h3, .step h3, .thrive-item h3, .r
 }
 @media (max-width: 380px) { .brand img.brand-mark { height: 46px; } }
 .footer-brand .logo-card.brand { display: grid; column-gap: 0.6rem; padding: 0.7rem 1rem 0.6rem; }
+
+/* ===================================================================== Round 32 */
+/* Logo: discovery tight against the mark, bold Health tucked into the tail of the y */
+.brand { column-gap: 0.12rem; }
+.brand-v4 .brand-hc2 { width: 0; min-width: 0; justify-self: center; justify-content: center; overflow: visible; }
+.footer-brand .logo-card.brand { column-gap: 0.12rem; }
+.brand-health { font-weight: 800; margin-left: -0.34em; position: relative; z-index: 1; letter-spacing: -0.03em; }
+/* Header: phone button is icon-only on desktop (the number stays in the phone menu) */
+@media (min-width: 961px) {
+  .site-nav .btn-phone { width: 44px; height: 44px; padding: 0; border-radius: 50%; justify-content: center; }
+  .site-nav .btn-phone .label { display: none; }
+  .site-nav .btn-phone svg { width: 20px; height: 20px; }
+}
+/* Service cards: the whole box lights up and all its text turns coral on hover */
+.svc-card a, .svc-card:hover a, .svc-card:focus-within a { text-decoration: none; }
+.svc-card:hover, .svc-card:focus-within { background: var(--teal-wash); border-color: var(--teal-tint); box-shadow: 0 18px 44px rgba(22, 63, 71, 0.18); transform: translateY(-6px) scale(1.02); }
+.svc-card:hover h3 a.svc-title, .svc-card:hover p, .svc-card:hover .link-more, .svc-card:focus-within h3 a.svc-title, .svc-card:focus-within p, .svc-card:focus-within .link-more { color: var(--coral-dark); }
+@media (max-width: 600px) {
+  .svc-card:active, .svc-card:focus-within { background: var(--teal-wash); border-color: var(--teal-tint); transform: none; }
+  .svc-card:active h3 a.svc-title, .svc-card:active p { color: var(--coral-dark); }
+}
