@@ -1424,3 +1424,9 @@ main { position: relative; }
   .hero-pulse path:nth-child(1) { stroke-dasharray: 420; stroke-dashoffset: 420; animation: dhPulseDraw 7s ease-out infinite; }
   @keyframes dhPulseDraw { 0% { stroke-dashoffset: 420; opacity: 0.2; } 45% { stroke-dashoffset: 0; opacity: 1; } 85% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0.2; } }
 }
+
+/* Round 68: phones show a short, plain description in white */
+@media (max-width: 600px) {
+  .hero-lede .lede-phone { display: none !important; }
+  .hero-lede .lede-short2 { display: inline !important; color: rgba(255, 255, 255, 0.94); }
+}
