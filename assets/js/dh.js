@@ -117,8 +117,7 @@
   /* ---------- Hero typewriter: "Discover care that brings" stays, the phrase beneath is typed, held, deleted ---------- */
   (function () {
     var el = document.querySelector(".hero-word"); if (!el) return;
-    var words = [].slice.call(document.querySelectorAll(".hero-car-slide[data-word]")).map(function (s) { return s.getAttribute("data-word") + " home"; });
-    if (!words.length) words = ["Comfort home"];
+    var words = ["comfort home", "peace of mind home", "confidence back", "dignity to every day", "safety to your door", "independence home"];
     if (reduce) { el.textContent = words[0]; return; }
     var wi = 0, ci = 0, deleting = false;
     el.textContent = "";

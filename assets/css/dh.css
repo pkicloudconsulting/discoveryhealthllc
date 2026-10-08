@@ -1389,3 +1389,11 @@ body { overflow-x: visible; }
 /* Round 63c: phone orbit spans the width like Privia's */
 @media (max-width: 900px) { .hero.hero-privia .hero-orbit { zoom: 0.64; margin: 0.4rem -1.2rem -5.2rem 0; } }
 @media (max-width: 600px) { .hero.hero-privia .hero-orbit { zoom: 0.62; margin: 0.2rem -2rem -5.2rem 0; } }
+
+/* ===================================================================== Round 64 */
+/* Background photos show through more; the left stays lighter so the copy reads */
+.hero.hero-privia .hero-car-slide img, .hero.hero-privia .hero-car-slide video { filter: saturate(0.85); }
+.hero.hero-privia .hero-car-frame::after { background: radial-gradient(ellipse at 24% 42%, rgba(248, 241, 228, 0.9) 0%, rgba(248, 241, 228, 0) 50%), linear-gradient(100deg, rgba(238, 245, 245, 0.82) 0%, rgba(217, 235, 236, 0.66) 50%, rgba(188, 220, 223, 0.5) 100%); }
+@media (max-width: 900px) { .hero.hero-privia .hero-car-frame::after { background: radial-gradient(ellipse at 30% 25%, rgba(248, 241, 228, 0.92) 0%, rgba(248, 241, 228, 0) 55%), linear-gradient(180deg, rgba(238, 245, 245, 0.84) 0%, rgba(217, 235, 236, 0.62) 55%, rgba(188, 220, 223, 0.5) 100%); } }
+/* HEALTH tucked right up under DISCOVERY */
+.brand-wm-text.privia .w2 { margin-top: 0.02rem; padding-left: 0.12em; }
