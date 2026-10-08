@@ -1140,3 +1140,12 @@ main, .site-footer { overflow-x: clip; }
 .brand .brand-script { position: relative; z-index: 2; vertical-align: calc(-1.28em * 0.3209 + 0.22em); margin-right: 0; }
 .brand-health { margin-left: -0.5em; z-index: 1; }
 @media (max-width: 600px) { .site-footer { padding-bottom: 5.5rem; } }
+
+/* ===================================================================== Round 46: service cards slide in from the left and right like the resources */
+.svc-grid .svc-card.reveal:not(.in) { opacity: 0; transform: none; }
+.svc-grid .svc-card.reveal.in:nth-child(n) { animation: svcInLeft 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.svc-grid .svc-card.reveal.in:nth-child(even) { animation-name: svcInRight; }
+.svc-grid .svc-card.reveal.in:nth-child(2), .svc-grid .svc-card.reveal.in:nth-child(5) { animation-delay: 0.1s; }
+.svc-grid .svc-card.reveal.in:nth-child(3), .svc-grid .svc-card.reveal.in:nth-child(6) { animation-delay: 0.2s; }
+@media (max-width: 600px) { .svc-grid .svc-card.reveal.in:nth-child(n) { animation-delay: 0s; } }
+@media (prefers-reduced-motion: reduce) { .svc-grid .svc-card.reveal.in:nth-child(n) { animation: none; } }
