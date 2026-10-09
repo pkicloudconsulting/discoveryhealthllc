@@ -7,22 +7,24 @@
 // optional Cloudflare Turnstile. Secrets: RESEND_API_KEY (required), TURNSTILE_SECRET (optional).
 // Build: worker/build.py inlines the logo into contact-worker.js. Edit THIS file, then rebuild.
 
-const OFFICE = "office@discoveryhealthllc.com";
-const FROM = "Discovery Health LLC <office@discoveryhealthllc.com>";
+const OFFICE = "office@discoveryhealthva.com";
+const FROM = "Discovery Health LLC <office@discoveryhealthva.com>";
 const PRACTICE = "Discovery Health LLC";
-const PHONE = "(267) 939-7727";
-const PHONE_TEL = "+12679397727";
-const SITE = "https://pkicloudconsulting.github.io/discoveryhealthllc/";
+const PHONE = "(804) 599-5541";
+const PHONE_TEL = "+18045995541";
+const SITE = "https://www.discoveryhealthva.com/";
 const LOGO_CID = "dh-logo";
 const LOGO_PNG_BASE64 = "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";
 
 const ALLOWED_ORIGINS = [
-  "https://www.discoveryhealthllc.com",
-  "https://discoveryhealthllc.com",
+  "https://www.discoveryhealthva.com",
+  "https://discoveryhealthva.com",
   "https://pkicloudconsulting.github.io",
   "http://127.0.0.1:8002",
   "http://localhost:8002",
 ];
+// Resend replies that point at setup rather than a passing glitch, so the site can fall back to mailto
+const CONFIG_ERROR = /not verified|validation_error|invalid.{0,20}api key|unauthorized|restricted|Resend 40[0-3]/i;
 const RATE_LIMIT_MAX = 3;
 const RATE_LIMIT_WINDOW_SECONDS = 600;
 const DUPLICATE_WINDOW_SECONDS = 120;
@@ -125,6 +127,8 @@ export default {
 
     const name = clean(data.name, 120), phone = clean(data.phone, 40), email = clean(data.email, 200);
     const who = clean(data.I_am_a, 80), service = clean(data.service, 120), msg = clean(data.message, 3000), page = clean(data.page, 200);
+    const city = clean(data.city, 80), state = clean(data.state, 40);
+    const where = [city, state].filter(Boolean).join(", ");
     const first = name.split(/\s+/)[0] || "there";
     const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
     if (!name || !phone || !msg) return json({ error: "Please add your name, a phone number and a short message." }, 400, headers);
@@ -142,6 +146,7 @@ export default {
       ["Phone", phone, `tel:${phone.replace(/[^\d+]/g, "")}`],
       ["Email", emailOk ? email : "Not provided (call back)", emailOk ? `mailto:${email}` : ""],
       ["They are a", who || "Not given"],
+      ["Location", where || "Not given"],
       ["Service", service || "Not sure yet"],
       ["Submitted", submitted],
       ["Sent from", page ? `Website ${page}` : "Website contact form"],
@@ -158,22 +163,56 @@ export default {
           `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 4px;"><tr>${pill(`tel:${esc(phone.replace(/[^\d+]/g, ""))}`, `Call ${esc(first)}`, true)}${emailOk ? `<td style="width:10px;"></td>${pill(`mailto:${esc(email)}`, "Reply by email", false)}` : ""}</tr></table>`),
       });
       if (emailOk) {
+        try {
+        const step = (n, t) => `<tr>
+          <td style="width:28px;vertical-align:top;padding:0 12px 14px 0;"><div style="width:26px;height:26px;border-radius:50%;background:${MIST};color:${TEAL_DEEP};font-size:13px;font-weight:800;text-align:center;line-height:26px;">${n}</div></td>
+          <td style="vertical-align:top;padding:3px 0 14px;font-size:15px;line-height:1.55;color:${INK};">${t}</td></tr>`;
         await sendViaResend(env.RESEND_API_KEY, {
           from: FROM, to: [email], reply_to: OFFICE,
-          subject: `We received your message: ${PRACTICE}`,
-          text: [`Hi ${first},`, "", `Thank you for contacting ${PRACTICE}. We have received your message and a member of our team will be in touch, usually within one business day.`, "", `If you would rather talk now, call us at ${PHONE}.`, "", "If this is a medical emergency, please call 911.", "", "Kind regards,", `The ${PRACTICE} team`, SITE].join("\n"),
-          html: shell("We received your message and will be in touch within one business day.",
+          subject: `Thank you, ${first} \u2014 we have your message`,
+          text: [
+            `Hi ${first},`, "",
+            `Thank you for contacting ${PRACTICE}. Your message has reached our team and we will be in touch, usually within one business day.`, "",
+            "WHAT HAPPENS NEXT",
+            "1. A member of our care team reads your message.",
+            "2. We call you to understand what you need. There is no obligation and no cost for the conversation.",
+            "3. If we are the right fit, a nurse arranges an in-home assessment and we build a care plan with you.", "",
+            `If you would rather talk now, call us on ${PHONE}.`, "",
+            "If this is a medical emergency, please call 911.", "",
+            "Kind regards,", `The ${PRACTICE} team`, SITE, "",
+            "---",
+            `This is an automated confirmation, so there is no need to reply to it. If you would like to add anything, call ${PHONE} or write to ${OFFICE} and a person will pick it up.`,
+          ].join("\n"),
+          html: shell("We have your message and will be in touch within one business day.",
             eyebrow("Message received") + headline(`Thank you, ${esc(first)}.`) +
-            para(`We have received your message. A member of our team will be in touch, usually within <strong>one business day</strong>, to talk through the options.`) +
-            para(`If you would rather talk now, call us at <a href="tel:${PHONE_TEL}" style="color:${TEAL};font-weight:700;text-decoration:none;">${esc(PHONE)}</a>.`) +
-            `<div style="padding:12px 16px;background:${MIST};border-left:4px solid ${TEAL};border-radius:0 10px 10px 0;font-size:14px;line-height:1.6;color:${INK};margin:4px 0 18px;">If this is a medical emergency, please call <strong>911</strong>.</div>` +
-            `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>${pill(SITE, "Visit our website", true)}</tr></table>` +
-            `<p style="margin:20px 0 0;font-size:16px;line-height:1.65;color:${INK};">Kind regards,<br><strong>The ${esc(PRACTICE)} team</strong></p>`),
+            para(`Your message has reached our team. Someone will be in touch, usually within <strong>one business day</strong>, to talk through the options with you.`) +
+            `<div style="margin:22px 0 8px;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:${TEAL};">What happens next</div>` +
+            `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 6px;">` +
+              step(1, "A member of our care team reads your message.") +
+              step(2, "We call you to understand what you need. There is no obligation, and the conversation costs nothing.") +
+              step(3, "If we are the right fit, a nurse arranges an in-home assessment and we build a care plan with you.") +
+            `</table>` +
+            para(`If you would rather talk now, call us on <a href="tel:${PHONE_TEL}" style="color:${TEAL};font-weight:700;text-decoration:none;">${esc(PHONE)}</a>.`) +
+            `<div style="padding:12px 16px;background:${MIST};border-left:4px solid ${CORAL};border-radius:0 10px 10px 0;font-size:14px;line-height:1.6;color:${INK};margin:4px 0 20px;">If this is a medical emergency, please call <strong>911</strong>.</div>` +
+            `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>${pill(`tel:${PHONE_TEL}`, `Call ${esc(PHONE)}`, true)}<td style="width:10px;"></td>${pill(SITE, "Visit our website", false)}</tr></table>` +
+            `<p style="margin:22px 0 0;font-size:16px;line-height:1.65;color:${INK};">Kind regards,<br><strong>The ${esc(PRACTICE)} team</strong></p>` +
+            `<div style="margin:22px 0 0;padding:14px 0 0;border-top:1px solid #eef1f4;font-size:13px;line-height:1.6;color:${SOFT};">This is an automated confirmation, so there is no need to reply to it. If you would like to add anything, call <a href="tel:${PHONE_TEL}" style="color:${TEAL};text-decoration:none;">${esc(PHONE)}</a> or write to <a href="mailto:${OFFICE}" style="color:${TEAL};text-decoration:none;">${OFFICE}</a> and a person will pick it up.</div>`),
         });
+        } catch (e) {
+          // the office already has the enquiry; a failed courtesy copy is not the visitor's problem
+          console.error("confirmation to visitor failed:", String((e && e.message) || e).slice(0, 300));
+        }
       }
       return json({ success: true }, 200, headers);
     } catch (err) {
-      console.error("send failed:", String((err && err.message) || err).slice(0, 300));
+      const detail = String((err && err.message) || err);
+      console.error("send failed:", detail.slice(0, 300));
+      // A misconfigured mail setup (unverified sending domain, missing or revoked key) must not
+      // dead-end the visitor: answer not_configured so the site falls back to their email app
+      // with the message pre-filled. Only a genuine transient failure returns an error.
+      if (CONFIG_ERROR.test(detail)) {
+        return json({ error: "Email is not configured yet.", code: "not_configured" }, 503, headers);
+      }
       return json({ error: `We could not send your message right now. Please call ${PHONE} or email ${OFFICE}.` }, 502, headers);
     }
   },

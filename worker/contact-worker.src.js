@@ -6,22 +6,24 @@
 // optional Cloudflare Turnstile. Secrets: RESEND_API_KEY (required), TURNSTILE_SECRET (optional).
 // Build: worker/build.py inlines the logo into contact-worker.js. Edit THIS file, then rebuild.
 
-const OFFICE = "office@discoveryhealthllc.com";
-const FROM = "Discovery Health LLC <office@discoveryhealthllc.com>";
+const OFFICE = "office@discoveryhealthva.com";
+const FROM = "Discovery Health LLC <office@discoveryhealthva.com>";
 const PRACTICE = "Discovery Health LLC";
-const PHONE = "(267) 939-7727";
-const PHONE_TEL = "+12679397727";
-const SITE = "https://pkicloudconsulting.github.io/discoveryhealthllc/";
+const PHONE = "(804) 599-5541";
+const PHONE_TEL = "+18045995541";
+const SITE = "https://www.discoveryhealthva.com/";
 const LOGO_CID = "dh-logo";
 const LOGO_PNG_BASE64 = "__LOGO__";
 
 const ALLOWED_ORIGINS = [
-  "https://www.discoveryhealthllc.com",
-  "https://discoveryhealthllc.com",
+  "https://www.discoveryhealthva.com",
+  "https://discoveryhealthva.com",
   "https://pkicloudconsulting.github.io",
   "http://127.0.0.1:8002",
   "http://localhost:8002",
 ];
+// Resend replies that point at setup rather than a passing glitch, so the site can fall back to mailto
+const CONFIG_ERROR = /not verified|validation_error|invalid.{0,20}api key|unauthorized|restricted|Resend 40[0-3]/i;
 const RATE_LIMIT_MAX = 3;
 const RATE_LIMIT_WINDOW_SECONDS = 600;
 const DUPLICATE_WINDOW_SECONDS = 120;
@@ -124,6 +126,8 @@ export default {
 
     const name = clean(data.name, 120), phone = clean(data.phone, 40), email = clean(data.email, 200);
     const who = clean(data.I_am_a, 80), service = clean(data.service, 120), msg = clean(data.message, 3000), page = clean(data.page, 200);
+    const city = clean(data.city, 80), state = clean(data.state, 40);
+    const where = [city, state].filter(Boolean).join(", ");
     const first = name.split(/\s+/)[0] || "there";
     const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
     if (!name || !phone || !msg) return json({ error: "Please add your name, a phone number and a short message." }, 400, headers);
@@ -141,6 +145,7 @@ export default {
       ["Phone", phone, `tel:${phone.replace(/[^\d+]/g, "")}`],
       ["Email", emailOk ? email : "Not provided (call back)", emailOk ? `mailto:${email}` : ""],
       ["They are a", who || "Not given"],
+      ["Location", where || "Not given"],
       ["Service", service || "Not sure yet"],
       ["Submitted", submitted],
       ["Sent from", page ? `Website ${page}` : "Website contact form"],
@@ -157,22 +162,56 @@ export default {
           `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:22px 0 4px;"><tr>${pill(`tel:${esc(phone.replace(/[^\d+]/g, ""))}`, `Call ${esc(first)}`, true)}${emailOk ? `<td style="width:10px;"></td>${pill(`mailto:${esc(email)}`, "Reply by email", false)}` : ""}</tr></table>`),
       });
       if (emailOk) {
+        try {
+        const step = (n, t) => `<tr>
+          <td style="width:28px;vertical-align:top;padding:0 12px 14px 0;"><div style="width:26px;height:26px;border-radius:50%;background:${MIST};color:${TEAL_DEEP};font-size:13px;font-weight:800;text-align:center;line-height:26px;">${n}</div></td>
+          <td style="vertical-align:top;padding:3px 0 14px;font-size:15px;line-height:1.55;color:${INK};">${t}</td></tr>`;
         await sendViaResend(env.RESEND_API_KEY, {
           from: FROM, to: [email], reply_to: OFFICE,
-          subject: `We received your message: ${PRACTICE}`,
-          text: [`Hi ${first},`, "", `Thank you for contacting ${PRACTICE}. We have received your message and a member of our team will be in touch, usually within one business day.`, "", `If you would rather talk now, call us at ${PHONE}.`, "", "If this is a medical emergency, please call 911.", "", "Kind regards,", `The ${PRACTICE} team`, SITE].join("\n"),
-          html: shell("We received your message and will be in touch within one business day.",
+          subject: `Thank you, ${first} \u2014 we have your message`,
+          text: [
+            `Hi ${first},`, "",
+            `Thank you for contacting ${PRACTICE}. Your message has reached our team and we will be in touch, usually within one business day.`, "",
+            "WHAT HAPPENS NEXT",
+            "1. A member of our care team reads your message.",
+            "2. We call you to understand what you need. There is no obligation and no cost for the conversation.",
+            "3. If we are the right fit, a nurse arranges an in-home assessment and we build a care plan with you.", "",
+            `If you would rather talk now, call us on ${PHONE}.`, "",
+            "If this is a medical emergency, please call 911.", "",
+            "Kind regards,", `The ${PRACTICE} team`, SITE, "",
+            "---",
+            `This is an automated confirmation, so there is no need to reply to it. If you would like to add anything, call ${PHONE} or write to ${OFFICE} and a person will pick it up.`,
+          ].join("\n"),
+          html: shell("We have your message and will be in touch within one business day.",
             eyebrow("Message received") + headline(`Thank you, ${esc(first)}.`) +
-            para(`We have received your message. A member of our team will be in touch, usually within <strong>one business day</strong>, to talk through the options.`) +
-            para(`If you would rather talk now, call us at <a href="tel:${PHONE_TEL}" style="color:${TEAL};font-weight:700;text-decoration:none;">${esc(PHONE)}</a>.`) +
-            `<div style="padding:12px 16px;background:${MIST};border-left:4px solid ${TEAL};border-radius:0 10px 10px 0;font-size:14px;line-height:1.6;color:${INK};margin:4px 0 18px;">If this is a medical emergency, please call <strong>911</strong>.</div>` +
-            `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>${pill(SITE, "Visit our website", true)}</tr></table>` +
-            `<p style="margin:20px 0 0;font-size:16px;line-height:1.65;color:${INK};">Kind regards,<br><strong>The ${esc(PRACTICE)} team</strong></p>`),
+            para(`Your message has reached our team. Someone will be in touch, usually within <strong>one business day</strong>, to talk through the options with you.`) +
+            `<div style="margin:22px 0 8px;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:${TEAL};">What happens next</div>` +
+            `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 6px;">` +
+              step(1, "A member of our care team reads your message.") +
+              step(2, "We call you to understand what you need. There is no obligation, and the conversation costs nothing.") +
+              step(3, "If we are the right fit, a nurse arranges an in-home assessment and we build a care plan with you.") +
+            `</table>` +
+            para(`If you would rather talk now, call us on <a href="tel:${PHONE_TEL}" style="color:${TEAL};font-weight:700;text-decoration:none;">${esc(PHONE)}</a>.`) +
+            `<div style="padding:12px 16px;background:${MIST};border-left:4px solid ${CORAL};border-radius:0 10px 10px 0;font-size:14px;line-height:1.6;color:${INK};margin:4px 0 20px;">If this is a medical emergency, please call <strong>911</strong>.</div>` +
+            `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>${pill(`tel:${PHONE_TEL}`, `Call ${esc(PHONE)}`, true)}<td style="width:10px;"></td>${pill(SITE, "Visit our website", false)}</tr></table>` +
+            `<p style="margin:22px 0 0;font-size:16px;line-height:1.65;color:${INK};">Kind regards,<br><strong>The ${esc(PRACTICE)} team</strong></p>` +
+            `<div style="margin:22px 0 0;padding:14px 0 0;border-top:1px solid #eef1f4;font-size:13px;line-height:1.6;color:${SOFT};">This is an automated confirmation, so there is no need to reply to it. If you would like to add anything, call <a href="tel:${PHONE_TEL}" style="color:${TEAL};text-decoration:none;">${esc(PHONE)}</a> or write to <a href="mailto:${OFFICE}" style="color:${TEAL};text-decoration:none;">${OFFICE}</a> and a person will pick it up.</div>`),
         });
+        } catch (e) {
+          // the office already has the enquiry; a failed courtesy copy is not the visitor's problem
+          console.error("confirmation to visitor failed:", String((e && e.message) || e).slice(0, 300));
+        }
       }
       return json({ success: true }, 200, headers);
     } catch (err) {
-      console.error("send failed:", String((err && err.message) || err).slice(0, 300));
+      const detail = String((err && err.message) || err);
+      console.error("send failed:", detail.slice(0, 300));
+      // A misconfigured mail setup (unverified sending domain, missing or revoked key) must not
+      // dead-end the visitor: answer not_configured so the site falls back to their email app
+      // with the message pre-filled. Only a genuine transient failure returns an error.
+      if (CONFIG_ERROR.test(detail)) {
+        return json({ error: "Email is not configured yet.", code: "not_configured" }, 503, headers);
+      }
       return json({ error: `We could not send your message right now. Please call ${PHONE} or email ${OFFICE}.` }, 502, headers);
     }
   },

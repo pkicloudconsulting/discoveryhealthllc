@@ -6,7 +6,7 @@ name = "dh-contact"
 main = "contact-worker.js"
 compatibility_date = "2024-11-01"
 
-# Rate limit + duplicate guard. The id is filled in when the namespace is created.
+# Rate limiting + duplicate guard (namespace "dh-contact-RATE_LIMIT", created 2026-10-09)
 [[kv_namespaces]]
 binding = "RATE_LIMIT"
-id = "__KV_ID__"
+id = "88bcaebebcf84708a819e1347d8291ef"
