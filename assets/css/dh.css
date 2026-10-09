@@ -1504,3 +1504,20 @@ main { position: relative; }
 
 /* Footer service-area line sits flush with the phone and email rows */
 .footer-contact svg { flex: none; }
+
+/* ===================================================================== Round 79: phones get the desktop motif */
+/* Phones had their own simpler SVG (.hero-pulse-m) whose line used dhDrawIn with a single
+   iteration, so it drew once on load and then sat frozen. The desktop motif runs the dhEcgRun
+   tracer continuously over a solid base line. Rather than keep two drawings in sync, phones now
+   show the same .hero-pulse the desktop uses, just scaled down; the continuous sweep comes with it. */
+/* One fluid width rather than stepped breakpoints, and it is tuned to LAND on the desktop size at
+   the 900px handover: desktop is 30vw, which is 270px at 900px, and this reaches 270px there too,
+   so crossing the breakpoint no longer snaps. Narrow phones need a larger share of the screen for
+   the motif to read at all, hence the width easing down as the viewport grows. */
+@media (max-width: 900px) {
+  .hero-pulse-m { display: none; }
+  .hero-pulse {
+    display: block; left: auto; right: 3%; bottom: 52px;
+    width: clamp(250px, calc(352px - 9.1vw), 326px); max-width: none; opacity: 0.39;
+  }
+}
