@@ -24,18 +24,35 @@ Cloudflare Worker  dh-contact.<subdomain>.workers.dev
         '-- Resend: confirmation   --> the visitor (from office@)
 ```
 
-> **Status (2026-10-09):** the Worker is **deployed** at `https://dh-contact.tight-bush-2238.workers.dev`
-> on the info@pkicloudconsulting.com Cloudflare account (id `d101420602c4cd46552b0edad70d99ba`), with the
-> `RATE_LIMIT` KV namespace bound, the `RESEND_API_KEY` secret set, and `assets/js/dh.js` pointing at it.
-> The Resend domain is registered. Verified end to end: `GET` returns the running message, validation and
-> the spam trap behave, the rate limiter writes to KV, and a real submission now reaches Resend.
+> **Status (2026-10-09): COMPLETE and verified end to end.**
+> The Worker is live at `https://dh-contact.tight-bush-2238.workers.dev` on the
+> info@pkicloudconsulting.com Cloudflare account, with the `RATE_LIMIT` KV namespace bound and the
+> `RESEND_API_KEY` secret set. The Resend domain `discoveryhealthva.com` is **verified** (DKIM, both
+> SPF records and the `rsend` CNAME all green) and `assets/js/dh.js` points at the Worker.
 >
-> **One thing is left: the four DNS records in Part 1 step 3, at Namecheap.** Until they verify, Resend
-> rejects every send with 403 *"the discoveryhealthva.com domain is not verified"*, the Worker answers
-> 502, and the website falls back to opening the visitor's email app. Nothing is broken meanwhile.
+> Proven by a real submission on 2026-10-09: the Worker returned `{"success":true}` and Resend
+> delivered both emails -- *New care inquiry: ...* to the office and *Thank you, ... we have your
+> message* to the visitor.
 >
-> Note the Resend account here is **separate** from the one behind the sibling sites: it holds one key
-> (`discoveryhealth`), no other domains, and no send history.
+> **Mail-safety note for anyone editing DNS here.** Namecheap deletes auto-managed records when you
+> save the first host record (`DeleteParkingRecords`) and when you leave Private Email for Custom MX.
+> The apex SPF `v=spf1 include:spf.privateemail.com ~all` was silently dropped **twice** during setup
+> and had to be re-added by hand; the first re-add looked saved in the UI but did not persist until the
+> page was reloaded and it was entered again. After ANY change in Advanced DNS, reload the page and
+> confirm these still resolve:
+>
+> ```
+> dig +short MX  discoveryhealthva.com      # must list mx1 AND mx2.privateemail.com
+> dig +short TXT discoveryhealthva.com      # must show the privateemail SPF
+> ```
+>
+> Mail Settings is now **Custom MX** with three rows: `@ mx1.privateemail.com 10`,
+> `@ mx2.privateemail.com 10`, `send feedback-smtp.us-east-1.amazonses.com 10`.
+>
+> The old parking records (`www -> parkingpage.namecheap.com` and the `@` URL redirect) were removed by
+> Namecheap during the first save. The website itself is served from GitHub Pages at
+> `pkicloudconsulting.github.io/discoveryhealthllc`; **the custom domain is not pointed at the site
+> yet** -- that is separate, still-outstanding work.
 
 ## Part 1. Resend: let office@ send email (about 15 minutes plus DNS wait)
 
