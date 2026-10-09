@@ -1495,3 +1495,12 @@ main { position: relative; }
 .brand-wm-text.privia .w2 { width: 0; min-width: 100%; box-sizing: border-box; }
 /* Round 76: LLC nudged a hair left so the C sits under the Y */
 .brand-wm-text.privia .w2 { padding-right: 0.3em; }
+
+/* ===================================================================== Round 77: bolder wordmark, Virginia presence */
+/* Client asked for the main name to read a little bolder: DISCOVERY moves from Light to SemiBold
+   and HEALTH LLC from Bold to ExtraBold. HEALTH LLC keeps its original teal. */
+.brand-wm-text.privia .w1 { font-weight: 600; }
+.brand-wm-text.privia .w2 { font-weight: 800; }
+
+/* Footer service-area line sits flush with the phone and email rows */
+.footer-contact svg { flex: none; }

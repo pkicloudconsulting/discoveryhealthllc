@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# wrangler build/state
+worker/.wrangler/

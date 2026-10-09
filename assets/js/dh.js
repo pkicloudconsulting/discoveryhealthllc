@@ -2,11 +2,11 @@
 (function () {
   "use strict";
 
-  /* Set this to the form backend URL (for example a Cloudflare Worker) once it exists.
-     While it is empty the contact form falls back to opening the visitor email app with the message prefilled. */
-  var FORM_ENDPOINT = "";
-  var OFFICE_EMAIL = "office@discoveryhealthllc.com";
-  var PHONE_DISPLAY = "(267) 939-7727";
+  /* The Cloudflare Worker that receives this form (worker/SETUP.md). If it is empty, unreachable, or
+     still missing its Resend key, the contact form falls back to opening the visitor email app. */
+  var FORM_ENDPOINT = "https://dh-contact.tight-bush-2238.workers.dev";
+  var OFFICE_EMAIL = "office@discoveryhealthva.com";
+  var PHONE_DISPLAY = "(804) 599-5541";
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

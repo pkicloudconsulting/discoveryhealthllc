@@ -33,10 +33,26 @@ script slogans. Image holders use the Care Advantage shape (border-radius 80px 8
 
 ## Contact details used sitewide
 
-- Phone (267) 939-7727
-- info@discoveryhealthllc.com and office@discoveryhealthllc.com
+- Phone (804) 599-5541
+- info@discoveryhealthva.com and office@discoveryhealthva.com
 
 Change them in every HTML file (search and replace) and in `assets/js/dh.js`.
+
+## Virginia presence
+
+The site states its Virginia service area in several places. Keep them in step if the wording changes:
+
+- Home hero badge `.hero-locale` ("Serving families across Virginia") and the ribbon under it
+- Footer contact list: a map-pin row on every page, plus the `.footer-services` line
+- Contact page: the "Service area" entry in the contact card
+- Contact form: `City or county` and a `State` select that defaults to Virginia
+- `<meta name="geo.region" content="US-VA">` and `geo.placename` in every page head
+- Titles and meta descriptions on home, about, services, FAQ and contact
+- JSON-LD on the home page: `address.addressRegion` VA and `areaServed` Virginia
+- The chatbot's "What areas do you serve?" answer
+
+The JSON-LD carries no street address or locality, only the state. Add `addressLocality` and
+`streetAddress` once the business address is confirmed; local search results improve sharply with them.
 
 ## Contact form
 
@@ -44,6 +60,10 @@ Change them in every HTML file (search and replace) and in `assets/js/dh.js`.
 email app with the message prefilled (mailto to office@). Point it at a backend (for example a
 Cloudflare Worker that relays to email) to send silently; the form posts URL-encoded fields with
 `mode: no-cors`, honeypot field `website`.
+
+Fields: `name`, `phone`, `email`, `I_am_a`, `city`, `state` (defaults to Virginia), `service`,
+`message`. The Worker reads `city` and `state` into one "Location" row in the office email, so adding
+a field to the form means adding it to `worker/contact-worker.src.js` too, then rebuilding.
 
 ## Chatbot
 
@@ -58,7 +78,7 @@ permissioned client reviews before launch. The QR card (bottom left, desktop onl
 `assets/img/site-qr.png`, currently the GitHub Pages URL. Regenerate it when the custom domain goes live:
 
 ```
-python3 -c "import qrcode; qrcode.make('https://www.discoveryhealthllc.com/').save('assets/img/site-qr.png')"
+python3 -c "import qrcode; qrcode.make('https://www.discoveryhealthva.com/').save('assets/img/site-qr.png')"
 ```
 
 ## Editing
@@ -69,7 +89,7 @@ python3 -c "import qrcode; qrcode.make('https://www.discoveryhealthllc.com/').sa
   `data-word` is the word that rotates in the headline.
 - Articles: copy an existing `resources/<slug>/index.html`, add a card to `resources/index.html`
   and the home page, and add the URL to `sitemap.xml`.
-- Domain: `sitemap.xml`, `robots.txt` and the canonical/og tags assume https://www.discoveryhealthllc.com.
+- Domain: `sitemap.xml`, `robots.txt` and the canonical/og tags assume https://www.discoveryhealthva.com.
   Search and replace if the final domain differs.
 
 ## Preview locally

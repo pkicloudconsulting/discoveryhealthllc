@@ -4,7 +4,7 @@
    only needs the stylesheet and this file. */
 (function () {
   "use strict";
-  var PHONE = "(267) 939-7727", TEL = "tel:+12679397727";
+  var PHONE = "(804) 599-5541", TEL = "tel:+18045995541";
   var BASE = (function () { var s = document.currentScript && document.currentScript.src || ""; var i = s.indexOf("assets/chatbot/"); return i > -1 ? s.slice(0, i).replace(location.origin, "") : ""; })();
   /* BASE holds the site-relative prefix ("" at root, "../" one level down) so links work from any page */
   if (BASE.indexOf("http") === 0) BASE = BASE.replace(/^https?:\/\/[^/]+/, "");
@@ -77,10 +77,10 @@
       a: "Yes. Our transitional care and fall prevention service covers the move from hospital or rehab back home: reviewing discharge instructions, reconciling medications, checking the home for fall risks, helping with mobility, transfers and stairs, and teaching you and your family how to prevent falls. [Read more](services/#transitional-care).",
       kw: ["fall", "falls", "fell", "fall prevention", "stairs", "balance", "rehab", "transition", "transitional", "after hospital", "going home", "mobility"] },
     { id: "contact", topic: "contact", chip: "How do I reach you?", q: "How do I contact Discovery Health?",
-      a: "Call [" + PHONE + "](" + TEL + "), email [info@discoveryhealthllc.com](mailto:info@discoveryhealthllc.com) or [office@discoveryhealthllc.com](mailto:office@discoveryhealthllc.com), or use the [contact page](contact/). We aim to respond to messages within one business day.",
+      a: "Call [" + PHONE + "](" + TEL + "), email [info@discoveryhealthva.com](mailto:info@discoveryhealthva.com) or [office@discoveryhealthva.com](mailto:office@discoveryhealthva.com), or use the [contact page](contact/). We aim to respond to messages within one business day.",
       kw: ["contact", "phone", "call", "email", "reach", "number", "address", "hours", "open", "speak", "talk to someone", "human", "person"] },
     { id: "areas", topic: "contact", chip: "What areas do you serve?", q: "What areas do you serve?",
-      a: "Discovery Health LLC serves individuals and families in their homes and communities. Please call [" + PHONE + "](" + TEL + ") to confirm availability in your area.",
+      a: "Discovery Health LLC serves individuals and families across Virginia, in their own homes and communities. Please call [" + PHONE + "](" + TEL + ") to confirm availability in your city or county.",
       kw: ["area", "areas", "serve", "location", "located", "where", "county", "city", "richmond", "virginia", "near me", "zip"] },
     { id: "careers", topic: "contact", chip: "Are you hiring?", q: "Are you hiring nurses or caregivers?",
       a: "We are always glad to hear from nurses and caregivers who share our values. Please [send us a message](contact/) with your role and experience and the office will get back to you.",
