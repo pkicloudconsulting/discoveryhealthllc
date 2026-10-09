@@ -1504,3 +1504,35 @@ main { position: relative; }
 
 /* Footer service-area line sits flush with the phone and email rows */
 .footer-contact svg { flex: none; }
+
+/* ===================================================================== Round 78: the faint yellow motif on a calm 5s beat */
+/* It used to draw in once and then the bright pulse ran forever with no rest, which is what caught
+   the eye. Now one sweep happens per five seconds and the rest of the cycle is still. The faint base
+   line stays drawn throughout, so nothing ever blinks out and redraws. */
+@media (prefers-reduced-motion: no-preference) {
+  /* desktop: the bright pulse sweeps the line once, then roughly two seconds of quiet */
+  .hero-pulse .hp-ecg { stroke-dasharray: 60 360; animation: dhEcgSweep 5s ease-in-out infinite; }
+  @keyframes dhEcgSweep {
+    0%   { stroke-dashoffset: 420; opacity: 0; }
+    10%  { opacity: 0.9; }
+    55%  { stroke-dashoffset: 0; opacity: 0.9; }
+    66%  { stroke-dashoffset: 0; opacity: 0; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+  /* the heart answers each sweep with one slow breath rather than a pop */
+  .hero-pulse .hp-heart { stroke-dashoffset: 0; animation: dhHeartBreath 5s ease-in-out infinite; animation-delay: 0s; }
+  @keyframes dhHeartBreath {
+    0%, 38%   { opacity: 0.5; }
+    57%       { opacity: 1; }
+    76%, 100% { opacity: 0.5; }
+  }
+  /* phones have no separate tracer path, so the single line breathes on the same beat
+     instead of redrawing, which would read as a blink at that size */
+  .hero-pulse-m .hpm-line { stroke-dashoffset: 0; animation: dhLineBreath 5s ease-in-out infinite; animation-delay: 0s; }
+  .hero-pulse-m .hpm-heart { opacity: 0.5; animation: dhHeartBreath 5s ease-in-out infinite; animation-delay: 0s; }
+  @keyframes dhLineBreath {
+    0%, 32%   { opacity: 0.45; }
+    55%       { opacity: 1; }
+    78%, 100% { opacity: 0.45; }
+  }
+}
