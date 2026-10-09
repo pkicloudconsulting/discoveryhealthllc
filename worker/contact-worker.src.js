@@ -75,7 +75,7 @@ function shell(preheader, inner) {
   <tr><td style="height:5px;font-size:0;line-height:0;background:${CORAL};">&nbsp;</td></tr>
   <tr><td style="padding:26px 36px 16px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
     <td style="vertical-align:middle;padding-right:12px;"><img src="cid:${LOGO_CID}" width="56" height="56" alt="${PRACTICE} logo" style="display:block;border:0;"></td>
-    <td style="vertical-align:middle;font-size:18px;font-weight:800;letter-spacing:0.5px;color:${TEAL_DEEP};">DISCOVERY HEALTH LLC<br><span style="font-size:11px;letter-spacing:4px;color:${TEAL};font-weight:700;">HOME CARE</span></td>
+    <td style="vertical-align:middle;font-size:18px;font-weight:800;letter-spacing:0;color:${TEAL_DEEP};">DISCOVERY HEALTH LLC<br><span style="font-size:11px;letter-spacing:2px;color:${TEAL};font-weight:700;">HOME CARE</span></td>
   </tr></table></td></tr>
   <tr><td style="padding:0 36px;"><div style="height:1px;background:#d8e4e6;font-size:0;line-height:0;">&nbsp;</div></td></tr>
   <tr><td style="padding:26px 36px 28px;">${inner}</td></tr>
@@ -183,7 +183,7 @@ export default {
             `This is an automated confirmation, so there is no need to reply to it. If you would like to add anything, call ${PHONE} or write to ${OFFICE} and a person will pick it up.`,
           ].join("\n"),
           html: shell("We have your message and will be in touch within one business day.",
-            eyebrow("Message received") + headline(`Thank you, ${esc(first)}.`) +
+            eyebrow("Message received") + para(`Hi ${esc(first)},`) +
             para(`Your message has reached our team. Someone will be in touch, usually within <strong>one business day</strong>, to talk through the options with you.`) +
             `<div style="margin:22px 0 8px;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:${TEAL};">What happens next</div>` +
             `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 6px;">` +

@@ -1,0 +1,49 @@
+{
+  "object": "domain",
+  "id": "70ca70fd-3e63-43ef-a91e-b04509e93565",
+  "name": "discoveryhealthva.com",
+  "created_at": "2026-10-09 04:18:00.112705+00",
+  "status": "verified",
+  "capabilities": {
+    "sending": "enabled",
+    "receiving": "disabled"
+  },
+  "records": [
+    {
+      "record": "DKIM",
+      "name": "resend._domainkey",
+      "value": "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDnoVBSE22VoqUxOdKClgHuz7Wh/VrRt8tZZv4pNIDTNVd7cn6StH4X04kZTWSjkpW7BldUeTBTB2tpYHS+P2x4o51NBpFzjOA22BNqW1zUD0ptd/Ps/g7mQiwsaaRfhLO6DB43SE88jWCawRrnqlHjlUlEs6bgyB/qMwEsRCEfyQIDAQAB",
+      "type": "TXT",
+      "status": "verified",
+      "ttl": "Auto"
+    },
+    {
+      "record": "SPF",
+      "name": "send",
+      "type": "MX",
+      "ttl": "Auto",
+      "status": "verified",
+      "value": "feedback-smtp.us-east-1.amazonses.com",
+      "priority": 10
+    },
+    {
+      "record": "SPF",
+      "name": "send",
+      "value": "v=spf1 include:amazonses.com ~all",
+      "type": "TXT",
+      "ttl": "Auto",
+      "status": "verified"
+    },
+    {
+      "record": "SPF",
+      "name": "rsend",
+      "value": "send.forge.rmta.net",
+      "type": "CNAME",
+      "status": "verified",
+      "ttl": "Auto"
+    }
+  ],
+  "region": "us-east-1",
+  "open_tracking": false,
+  "click_tracking": false
+}

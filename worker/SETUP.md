@@ -184,12 +184,23 @@ CLI equivalent, if Node is ever installed: `npx wrangler secret put RESEND_API_K
 Edit `contact-worker.src.js`, then:
 
 ```
-python3 worker/build.py      # needs Pillow: python3 -m pip install Pillow
+python3 worker/build.py                 # Pillow is installed; otherwise: python3 -m pip install --user Pillow
+export PATH="$HOME/.local/bin:$PATH"
+cd worker && wrangler deploy
 ```
 
-then paste the regenerated `worker/contact-worker.js` into the dashboard editor again and **Deploy**
-(or `cd worker && npx wrangler deploy` where Node is available). Never edit `contact-worker.js` by
-hand -- `build.py` overwrites it.
+(or paste the regenerated `worker/contact-worker.js` into the dashboard editor and **Deploy**).
+Never edit `contact-worker.js` by hand -- `build.py` overwrites it.
+
+`build.py` inlines `assets/img/apple-touch-icon.png` at 112px as the small logo mark beside the
+"DISCOVERY HEALTH LLC / HOME CARE" lockup in the email header. If you change the 112 in `build.py`,
+keep the `width="56" height="56"` on the `<img>` in `contact-worker.src.js` at half of it so the mark
+stays sharp on retina.
+
+A full-width banner using `logo-horizontal.png` was tried and reverted -- it worked, but the small
+mark reads better. Reviving it means pointing `build.py` at that file, flattening it onto white
+(clients render PNG alpha badly), and quantising to 256 colours, which is visually lossless here and
+halves the payload every recipient downloads.
 
 Constants at the top of the file: office address, sender, phone, website address, allowed origins.
 Add the custom domain to `ALLOWED_ORIGINS` (already listed for www and the apex) and update `SITE`
